@@ -38,10 +38,10 @@
 									'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
 									'sound/ambience/ambiruin5.ogg',  'sound/ambience/ambiruin6.ogg',  'sound/ambience/ambiruin7.ogg',\
 									'sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambitech3.ogg',\
-									'sound/ambience/ambimystery.ogg', 'sound/ambience/ambimaint1.ogg')
+									'sound/ambience/ambimystery.ogg', 'sound/ambience/ambimaint1.ogg', 'sound/ambience/mgs2/windy1.ogg', sound/ambience/mgs2/windy3.ogg')
 
-#define ENGINEERING list('sound/ambience/ambisin1.ogg','sound/ambience/ambisin2.ogg','sound/ambience/ambisin3.ogg','sound/ambience/ambisin4.ogg',\
-										'sound/ambience/ambiatmos.ogg', 'sound/ambience/ambiatmos2.ogg', 'sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+#define ENGINEERING list('sound/ambience/mgs2/machinery1.ogg', 'sound/ambience/mgs2/machinery2.ogg', 'sound/ambience/mgs2/machinery3.ogg', 'sound/ambience/mgs2/machinery4.ogg', 'sound/ambience/mgs2/machinery5.ogg', 'sound/ambience/mgs2/hiss2.ogg', 'sound/ambience/mgs2/hiss1.ogg')
+
 
 #define MINING list('sound/ambience/ambimine.ogg', 'sound/ambience/ambicave.ogg', 'sound/ambience/ambiruin.ogg',\
 											'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
@@ -55,8 +55,9 @@
 
 #define SPACE list('sound/ambience/ambispace.ogg', 'sound/ambience/ambispace2.ogg', 'sound/ambience/title2.ogg', 'sound/ambience/ambiatmos.ogg')
 
-#define MAINTENANCE list('sound/ambience/ambimaint1.ogg', 'sound/ambience/ambimaint2.ogg', 'sound/ambience/ambimaint3.ogg', 'sound/ambience/ambimaint4.ogg',\
-											'sound/ambience/ambimaint5.ogg', 'sound/voice/lowHiss2.ogg', 'sound/voice/lowHiss3.ogg', 'sound/voice/lowHiss4.ogg', 'sound/ambience/ambitech2.ogg' )
+MAINTENANCE list('sound/ambience/mgs2/hiss1.ogg', 'sound/ambience/mgs2/hiss2.ogg', 'sound/ambience/mgs2/hiss3.ogg', 'sound/ambience/mgs2/windy2.ogg')
+
+#define ATMOS list('sound/ambience/mgs2/atmos1.ogg', sound/ambience/mgs2/atmos2.ogg')
 
 #define AWAY_MISSION list('sound/ambience/ambitech.ogg', 'sound/ambience/ambitech2.ogg', 'sound/ambience/ambiruin.ogg',\
 									'sound/ambience/ambiruin2.ogg',  'sound/ambience/ambiruin3.ogg',  'sound/ambience/ambiruin4.ogg',\
@@ -73,3 +74,7 @@
 	'sound/hallucinations/growl3.ogg', 'sound/hallucinations/im_here1.ogg', 'sound/hallucinations/im_here2.ogg', 'sound/hallucinations/i_see_you1.ogg', 'sound/hallucinations/i_see_you2.ogg',\
 	'sound/hallucinations/look_up1.ogg', 'sound/hallucinations/look_up2.ogg', 'sound/hallucinations/over_here1.ogg', 'sound/hallucinations/over_here2.ogg', 'sound/hallucinations/over_here3.ogg',\
 	'sound/hallucinations/turn_around1.ogg', 'sound/hallucinations/turn_around2.ogg', 'sound/hallucinations/veryfar_noise.ogg', 'sound/hallucinations/wail.ogg')
+
+#define LAVALAND_OUTSIDE list('sound/ambience/mgs2/windy1.ogg', sound/ambience/mgs2/windy3.ogg')
+
+#define LAVALAND_INSIDE list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/mgs2/windyinside.ogg')
