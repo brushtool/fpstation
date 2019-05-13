@@ -1,7 +1,7 @@
 /obj/structure/fireaxecabinet/face
 	..()
-	max_integrity = 450
-	var/unlocktime = 300 //this determines how long the cabinet takes to unlock with a multitool. 10 = 1 second so 300 = 30 seconds
+	max_integrity = 300
+	var/unlocktime = 120 //this determines how long the cabinet takes to unlock with a multitool. 10 = 1 second so 300 = 30 seconds
 
 /obj/structure/fireaxecabinet/face/Initialize()
 	. = ..()
