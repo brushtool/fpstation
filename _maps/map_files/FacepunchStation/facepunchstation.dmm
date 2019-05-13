@@ -21712,12 +21712,13 @@
 /turf/open/floor/plasteel,
 /area/bridge)
 "bcd" = (
-/obj/structure/fireaxecabinet{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
+	},
+/obj/structure/fireaxecabinet/face{
+	step_x = 1;
+	step_y = -32
 	},
 /turf/open/floor/plasteel,
 /area/bridge)
@@ -43586,12 +43587,12 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/engineering)
 "cgi" = (
-/obj/structure/fireaxecabinet{
-	pixel_x = -32
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	icon_state = "manifold-1";
 	dir = 8
+	},
+/obj/structure/fireaxecabinet/face{
+	step_x = -31
 	},
 /turf/open/floor/plasteel,
 /area/engine/atmos)
