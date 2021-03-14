@@ -267,7 +267,7 @@
 	. = ..()
 	if(!ishuman(user))
 		return
-	if(slot == ITEM_SLOT_MASK)
+	if(slot == SLOT_WEAR_MASK)
 		var/mob/living/carbon/human/H = user
 		style.teach(H,1)
 		to_chat(H, "<span class='sciradio'>You have learned the basics of the Sleeping Carp martial art! \
@@ -279,7 +279,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_MASK) == src)
+	if(H.get_item_by_slot(SLOT_WEAR_MASK) == src)
 		style.remove(H)
 		to_chat(H, "<span class='sciradio'>You forget the Sleeping Carp martial art!</span>")
 	return
@@ -299,7 +299,7 @@
 	. = ..()
 	if(!ishuman(user))
 		return
-	if(slot == ITEM_SLOT_OCLOTHING)
+	if(slot == SLOT_WEAR_SUIT)
 		ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 		var/mob/living/carbon/human/H = user
 		var/obj/item/clothing/mask/gas/carp/freemask = new
@@ -318,6 +318,6 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_OCLOTHING) == src)
+	if(H.get_item_by_slot(SLOT_WEAR_SUIT) == src)
 		style.remove(H)
 	return

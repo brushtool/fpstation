@@ -16,7 +16,7 @@
 	name = "Garrote Handles"
 	result = /obj/item/garrotehandles
 	reqs = list(/obj/item/stack/cable_coil = 15,
-				/obj/item/stack/rods = 1)
+				/obj/item/stack/rods = 1,)
 	tools = list(/obj/item/weldingtool)
 	time = 120
 	category = CAT_WEAPONRY
@@ -110,32 +110,6 @@
 	tools = list(/obj/item/weldingtool, /obj/item/screwdriver, /obj/item/wirecutters)
 	time = 200
 	category = CAT_ROBOT
-
-/datum/crafting_recipe/m1911
-	name = "M1911"
-	result = /obj/item/gun/ballistic/automatic/pistol/m1911
-	reqs = list(/obj/item/stack/sheet/plasteel = 5,
-				/obj/item/weaponcrafting/receiver = 1,
-				/obj/item/stack/packageWrap = 10,
-				/obj/item/stack/sheet/plastic = 10)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
-	time = 200
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
-/datum/crafting_recipe/shitglock
-	name = "Glock 16"
-	result = /obj/item/gun/ballistic/automatic/pistol/g17/improvised
-	reqs = list(/obj/item/reagent_containers/food/drinks/soda_cans = 1,
-				/obj/item/stack/sheet/metal = 20,
-				/obj/item/stack/cable_coil = 20,
-				/obj/item/pipe = 5,
-				/obj/item/stack/ducttape = 5,
-				/obj/item/stack/packageWrap = 10)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WRENCH, TOOL_WELDER)
-	time = 70
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
 
 /datum/crafting_recipe/lockermechdrill
 	name = "Makeshift exosuit drill"

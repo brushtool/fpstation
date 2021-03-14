@@ -159,7 +159,7 @@
 			. += A
 		processing_list += A.contents
 
-// Better recursive loop, technically sort of not actually recursive cause that shit is dumb, enjoy.
+// Better recursive loop, technically sort of not actually recursive cause that shit is retarded, enjoy.
 //No need for a recursive limit either
 /proc/recursive_mob_check(atom/O,client_check=1,sight_check=1,include_radio=1)
 
@@ -511,6 +511,15 @@
 
 	var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
 	announcer.announce("ARRIVAL", character.real_name, rank, list()) //make the list empty to make it announce it in common
+
+/proc/GetRedPart(const/hexa)
+	return hex2num(copytext(hexa, 2, 4))
+
+/proc/GetGreenPart(const/hexa)
+	return hex2num(copytext(hexa, 4, 6))
+
+/proc/GetBluePart(const/hexa)
+	return hex2num(copytext(hexa, 6, 8))
 
 /proc/lavaland_equipment_pressure_check(turf/T)
 	. = FALSE

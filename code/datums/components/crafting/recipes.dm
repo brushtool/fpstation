@@ -326,28 +326,17 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_AMMO
 
-/datum/crafting_recipe/suicide
-	name = "Suicide Vest"
-	result = /obj/item/clothing/suit/armor/suicide
-	reqs = list(/obj/item/assembly/health = 1,
-				/obj/item/assembly/igniter = 1,
-				/obj/item/clothing/suit/armor/vest = 1,
-				/obj/item/stack/cable_coil = 10)
-	tools = list(TOOL_WRENCH, TOOL_MULTITOOL)
-	time = 20
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/ishotgun
 	name = "Improvised Shotgun"
 	result = /obj/item/gun/ballistic/shotgun/doublebarrel/improvised
-	reqs = list(/obj/item/stack/sheet/plasteel = 2,
+	reqs = list(/obj/item/weaponcrafting/receiver = 1,
 				/obj/item/pipe = 1,
+				/obj/item/weaponcrafting/stock = 1,
 				/obj/item/stack/packageWrap = 5)
-	tools = list(TOOL_SCREWDRIVER, TOOL_WELDER)
+	tools = list(TOOL_SCREWDRIVER)
 	time = 100
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
-
 
 /datum/crafting_recipe/chainsaw
 	name = "Chainsaw"

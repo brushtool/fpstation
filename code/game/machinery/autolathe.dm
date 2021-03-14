@@ -156,7 +156,7 @@
 
 			var/multiplier = text2num(href_list["multiplier"])
 			var/is_stack = ispath(being_built.build_path, /obj/item/stack)
-			multiplier = clamp(multiplier,1,50)
+			multiplier = CLAMP(multiplier,1,50)
 
 			/////////////////
 

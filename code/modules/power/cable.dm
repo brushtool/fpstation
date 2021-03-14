@@ -206,7 +206,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 
 /obj/structure/cable/proc/surplus()
 	if(powernet)
-		return clamp(powernet.avail-powernet.load, 0, powernet.avail)
+		return CLAMP(powernet.avail-powernet.load, 0, powernet.avail)
 	else
 		return 0
 
@@ -222,7 +222,7 @@ GLOBAL_LIST_INIT(wire_node_generating_types, typecacheof(list(/obj/structure/gri
 
 /obj/structure/cable/proc/delayed_surplus()
 	if(powernet)
-		return clamp(powernet.newavail - powernet.delayedload, 0, powernet.newavail)
+		return CLAMP(powernet.newavail - powernet.delayedload, 0, powernet.newavail)
 	else
 		return 0
 
@@ -565,21 +565,20 @@ GLOBAL_LIST_INIT(cable_coil_recipes, list(new/datum/stack_recipe("cable restrain
 	anchored = TRUE
 	obj_flags = CAN_BE_HIT | ON_BLUEPRINTS
 
-/obj/structure/cable_bridge/Initialize(mapload)
+/obj/structure/cable_bridge/Initialize()
 	. = ..()
-	if (!mapload)
-		var/turf/T = get_turf(src)			// hide if turf is not intact
-		if(level==1)
-			hide(T.intact)
-		var/first = TRUE
-		var/datum/powernet/PN
-		for(var/obj/structure/cable/C in get_turf(src))
-			C.update_icon()
-			if(first == TRUE)
-				first = FALSE
-				PN = C.powernet
-				continue
-			propagate_network(C, PN)
+	var/turf/T = get_turf(src)			// hide if turf is not intact
+	if(level==1)
+		hide(T.intact)
+	var/first = TRUE
+	var/datum/powernet/PN
+	for(var/obj/structure/cable/C in get_turf(src))
+		C.update_icon()
+		if(first == TRUE)
+			first = FALSE
+			PN = C.powernet
+			continue
+		propagate_network(C, PN)
 
 //If underfloor, hide the cable
 /obj/structure/cable_bridge/hide(i)

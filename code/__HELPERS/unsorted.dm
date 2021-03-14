@@ -877,8 +877,8 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	tX = splittext(tX[1], ":")
 	tX = tX[1]
 	var/list/actual_view = getviewsize(C ? C.view : world.view)
-	tX = clamp(origin.x + text2num(tX) - round(actual_view[1] / 2) - 1, 1, world.maxx)
-	tY = clamp(origin.y + text2num(tY) - round(actual_view[2] / 2) - 1, 1, world.maxy)
+	tX = CLAMP(origin.x + text2num(tX) - round(actual_view[1] / 2) - 1, 1, world.maxx)
+	tY = CLAMP(origin.y + text2num(tY) - round(actual_view[2] / 2) - 1, 1, world.maxy)
 	return locate(tX, tY, tZ)
 
 /proc/screen_loc2turf(text, turf/origin, client/C)
@@ -891,8 +891,8 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 	tX = text2num(tX[2])
 	tZ = origin.z
 	var/list/actual_view = getviewsize(C ? C.view : world.view)
-	tX = clamp(origin.x + round(actual_view[1] / 2) - tX, 1, world.maxx)
-	tY = clamp(origin.y + round(actual_view[2] / 2) - tY, 1, world.maxy)
+	tX = CLAMP(origin.x + round(actual_view[1] / 2) - tX, 1, world.maxx)
+	tY = CLAMP(origin.y + round(actual_view[2] / 2) - tY, 1, world.maxy)
 	return locate(tX, tY, tZ)
 
 /proc/IsValidSrc(datum/D)
@@ -1563,11 +1563,7 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 //empty string - use TgsTargetBroadcast with admin_only = FALSE
 //other string - use TgsChatBroadcast with the tag that matches config_setting, only works with TGS4, if using TGS3 the above method is used
 /proc/send2chat(message, config_setting)
-	if(config_setting == null)
-		return
-
-	UNTIL(GLOB.tgs_initialized)
-	if(!world.TgsAvailable())
+	if(config_setting == null || !world.TgsAvailable())
 		return
 
 	var/datum/tgs_version/version = world.TgsVersion()
@@ -1590,11 +1586,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		return -1
 	else
 		return 0
-
-/proc/CallAsync(datum/source, proctype, list/arguments)
-	set waitfor = FALSE
-	return call(source, proctype)(arglist(arguments))
-
 
 #define TURF_FROM_COORDS_LIST(List) (locate(List[1], List[2], List[3]))
 

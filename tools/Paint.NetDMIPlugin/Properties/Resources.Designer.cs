@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PaintDotNet.DMIPlugin.Properties {
+namespace Paint.NetDMIPlugin.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace PaintDotNet.DMIPlugin.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PaintDotNet.DMIPlugin.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Paint.NetDMIPlugin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,16 @@ namespace PaintDotNet.DMIPlugin.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap robust {
+            get {
+                object obj = ResourceManager.GetObject("robust", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

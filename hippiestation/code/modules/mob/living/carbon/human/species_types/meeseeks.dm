@@ -2,7 +2,7 @@
 	name = "Mr. Meeseeks"
 	id = "meeseeks"
 	sexes = FALSE
-	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_OCLOTHING, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_WEAR_SUIT, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
 	nojumpsuit = TRUE
 	say_mod = "yells"
 	speedmod = 1
@@ -57,7 +57,7 @@
 	H.adjustBrainLoss(0.8)
 	if(stage_ticks == MEESEEKS_TICKS_STAGE_ONE)
 		ADD_TRAIT(H, TRAIT_CLUMSY, GENETIC_MUTATION)
-		//H.dna.add_mutation(SMILE)
+		H.dna.add_mutation(SMILE)
 	if(stage_ticks == MEESEEKS_TICKS_STAGE_TWO)
 		message_admins("[key_name_admin(H)] has become a stage-two Mr. Meeseeks.")
 		log_game("[key_name(H)] has become a stage-two Mr. Meeseeks.")

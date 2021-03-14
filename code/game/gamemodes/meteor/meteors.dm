@@ -4,17 +4,17 @@ GLOBAL_VAR_INIT(meteor_wave_delay, 625) //minimum wait between waves in tenths o
 
 //Meteors probability of spawning during a given wave
 GLOBAL_LIST_INIT(meteors_normal, list(/obj/effect/meteor/dust=3, /obj/effect/meteor/medium=8, /obj/effect/meteor/big=3, \
-						  /obj/effect/meteor/flaming=1, /obj/effect/meteor/irradiated=3, /obj/effect/meteor/lootrock=2)) //for normal meteor event | hippie -- loot rocks
+						  /obj/effect/meteor/flaming=1, /obj/effect/meteor/irradiated=3, /obj/effect/meteor/guardian = 0.05)) //for normal meteor event | hippie -- stand arrow
 
 GLOBAL_LIST_INIT(meteors_threatening, list(/obj/effect/meteor/medium=4, /obj/effect/meteor/big=8, \
-						  /obj/effect/meteor/flaming=3, /obj/effect/meteor/irradiated=3, /obj/effect/meteor/lootrock=3)) //for threatening meteor event | hippie -- loot rocks
+						  /obj/effect/meteor/flaming=3, /obj/effect/meteor/irradiated=3, /obj/effect/meteor/guardian = 0.05)) //for threatening meteor event | hippie -- stand arrow
 
 GLOBAL_LIST_INIT(meteors_catastrophic, list(/obj/effect/meteor/medium=5, /obj/effect/meteor/big=75, \
-						  /obj/effect/meteor/flaming=10, /obj/effect/meteor/irradiated=10, /obj/effect/meteor/tunguska = 1, /obj/effect/meteor/lootrock=4)) //for catastrophic meteor event | hippie -- loot rocks
+						  /obj/effect/meteor/flaming=10, /obj/effect/meteor/irradiated=10, /obj/effect/meteor/tunguska = 1, /obj/effect/meteor/guardian = 0.075)) //for catastrophic meteor event | hippie -- stand arrow
 
 GLOBAL_LIST_INIT(meteorsB, list(/obj/effect/meteor/meaty=5, /obj/effect/meteor/meaty/xeno=1)) //for meaty ore event
 
-GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust=25, /obj/effect/meteor/lootrock=1)) //for space dust event | hippie - loot rocks
+GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust)) //for space dust event
 
 
 ///////////////////////////////
@@ -144,23 +144,11 @@ GLOBAL_LIST_INIT(meteorsC, list(/obj/effect/meteor/dust=25, /obj/effect/meteor/l
 		if(A != src)
 			if(isliving(A))
 				A.visible_message("<span class='warning'>[src] slams into [A].</span>", "<span class='userdanger'>[src] slams into you!.</span>")
-			switch(hitpwr)
-				if(EXPLODE_DEVASTATE)
-					SSexplosions.highobj += A
-				if(EXPLODE_HEAVY)
-					SSexplosions.medobj += A
-				if(EXPLODE_LIGHT)
-					SSexplosions.lowobj += A
+			A.ex_act(hitpwr)
 
 	//then, ram the turf if it still exists
 	if(T)
-		switch(hitpwr)
-			if(EXPLODE_DEVASTATE)
-				SSexplosions.highturf += T
-			if(EXPLODE_HEAVY)
-				SSexplosions.medturf += T
-			if(EXPLODE_LIGHT)
-				SSexplosions.lowturf += T
+		T.ex_act(hitpwr)
 
 
 

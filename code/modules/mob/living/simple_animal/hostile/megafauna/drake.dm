@@ -100,7 +100,7 @@ Difficulty: Medium
 	if(swooping)
 		return
 
-	anger_modifier = clamp(((maxHealth - health)/50),0,20)
+	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + ranged_cooldown_time
 
 	if(client)
@@ -451,7 +451,8 @@ Difficulty: Medium
 		var/lava_turf = /turf/open/lava/smooth
 		var/reset_turf = T.type
 		T.ChangeTurf(lava_turf, flags = CHANGETURF_INHERIT_AIR)
-		addtimer(CALLBACK(T, /turf.proc/ChangeTurf, reset_turf, null, CHANGETURF_INHERIT_AIR), reset_time, TIMER_OVERRIDE)
+		sleep(reset_time)
+		T.ChangeTurf(reset_turf, flags = CHANGETURF_INHERIT_AIR)
 
 /obj/effect/temp_visual/drakewall
 	desc = "An ash drakes true flame."

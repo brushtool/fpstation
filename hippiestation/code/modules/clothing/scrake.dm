@@ -16,7 +16,7 @@
 
 /obj/item/clothing/suit/apron/chef/scrake/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
-	if(slot == ITEM_SLOT_OCLOTHING)
+	if(slot == SLOT_WEAR_SUIT)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 		item_flags |= DROPDEL
 		user.set_species(/datum/species/scrake)
@@ -66,7 +66,7 @@
 
 /obj/item/clothing/mask/surgical/scrake/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
-	if(slot == ITEM_SLOT_MASK)
+	if(slot == SLOT_WEAR_MASK)
 		item_flags |= DROPDEL
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 

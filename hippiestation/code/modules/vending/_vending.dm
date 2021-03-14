@@ -13,7 +13,7 @@
 /obj/machinery/vending
 	icon_hippie = 'hippiestation/icons/obj/vending.dmi'
 	light_color = LIGHT_COLOR_WHITE
-	var/brightness_on = 1
+	var/brightness_on = 4
 	var/hippie_products = list()
 	var/hippie_contraband = list()
 	var/hippie_premium = list()
@@ -105,7 +105,6 @@
 			ref = REF(R)
 		)
 		.["coin_records"] += list(data)
-	.["hidden_records"] = list()
 	for (var/datum/data/vending_product/R in hidden_records)
 		var/list/data = list(
 			path = replacetext(replacetext("[R.product_path]", "/obj/item/", ""), "/", "-"),

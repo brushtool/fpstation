@@ -39,7 +39,6 @@
 	name = "black tie"
 	icon_state = "blacktie"
 	item_color = "blacktie"
-	desc = "Why do we all have to wear these ridiculous ties?"
 
 /obj/item/clothing/neck/tie/horrible
 	name = "horrible tie"
@@ -234,7 +233,7 @@
 	. = ..()
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
-		if(C.get_item_by_slot(ITEM_SLOT_NECK) == src)
+		if(C.get_item_by_slot(SLOT_NECK) == src)
 			to_chat(user, "<span class='warning'>You can't untie [src] while wearing it!</span>")
 			return
 		if(user.is_holding(src))

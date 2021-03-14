@@ -7,8 +7,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 /obj/item
 	name = "item"
 	icon = 'icons/obj/items_and_weapons.dmi'
-	blocks_emissive = EMISSIVE_BLOCK_GENERIC
-	///icon state name for inhand overlays
 	var/item_state = null
 	var/lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	var/righthand_file = 'icons/mob/inhands/items_righthand.dmi'
@@ -421,7 +419,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 //sometimes we only want to grant the item's action if it's equipped in a specific slot.
 /obj/item/proc/item_action_slot_check(slot, mob/user)
-	if(slot == ITEM_SLOT_BACKPACK || slot == ITEM_SLOT_LEGCUFFED) //these aren't true slots, so avoid granting actions there
+	if(slot == SLOT_IN_BACKPACK || slot == SLOT_LEGCUFFED) //these aren't true slots, so avoid granting actions there
 		return FALSE
 	return TRUE
 
@@ -548,12 +546,10 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			itempush = 0 //too light to push anything
 		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
 
-/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
-	if(HAS_TRAIT(src, TRAIT_NODROP))
-		return
+/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
 	thrownby = thrower
 	callback = CALLBACK(src, .proc/after_throw, callback) //replace their callback with our own
-	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force, gentle, quickstart = quickstart)
+	. = ..(target, range, speed, thrower, spin, diagonals_first, callback, force)
 
 
 /obj/item/proc/after_throw(datum/callback/callback)
@@ -623,7 +619,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(ismob(location))
 		var/mob/M = location
 		var/success = FALSE
-		if(src == M.get_item_by_slot(ITEM_SLOT_MASK))
+		if(src == M.get_item_by_slot(SLOT_WEAR_MASK))
 			success = TRUE
 		if(success)
 			location = get_turf(M)
@@ -806,6 +802,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 			plane = initial(plane)
 			appearance_flags &= ~NO_CLIENT_COLOR
 			dropped(M)
+	return ..()
+
+/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=TRUE, diagonals_first = FALSE, var/datum/callback/callback)
+	if(HAS_TRAIT(src, TRAIT_NODROP))
+		return
 	return ..()
 
 /obj/item/proc/canStrip(mob/stripper, mob/owner)

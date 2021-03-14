@@ -22,7 +22,7 @@
 	var/del_on_unbuckle_all = FALSE
 
 /datum/component/riding/Initialize()
-	if(!ismovable(parent))
+	if(!ismovableatom(parent))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, COMSIG_MOVABLE_BUCKLE, .proc/vehicle_mob_buckle)
 	RegisterSignal(parent, COMSIG_MOVABLE_UNBUCKLE, .proc/vehicle_mob_unbuckle)

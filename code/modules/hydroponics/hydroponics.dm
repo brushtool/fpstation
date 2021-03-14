@@ -507,7 +507,7 @@
 	if(S.has_reagent(/datum/reagent/medicine/charcoal, 1))
 		adjustToxic(-round(S.get_reagent_amount(/datum/reagent/medicine/charcoal) * 2))
 
-	// YOU DUN GOOFED SON
+	// NIGGA, YOU JUST WENT ON FULL RETARD.
 	if(S.has_reagent(/datum/reagent/toxin, 1))
 		adjustToxic(round(S.get_reagent_amount(/datum/reagent/toxin) * 2))
 
@@ -566,6 +566,7 @@
 		adjustHealth(round(S.get_reagent_amount(/datum/reagent/consumable/sodawater) * 0.1))
 		adjustNutri(round(S.get_reagent_amount(/datum/reagent/consumable/sodawater) * 0.1))
 
+	// Man, you guys are retards
 	if(S.has_reagent(/datum/reagent/toxin/acid, 1))
 		adjustHealth(-round(S.get_reagent_amount(/datum/reagent/toxin/acid) * 1))
 		adjustToxic(round(S.get_reagent_amount(/datum/reagent/toxin/acid) * 1.5))
@@ -875,26 +876,26 @@
 
 /// Tray Setters - The following procs adjust the tray or plants variables, and make sure that the stat doesn't go out of bounds.///
 /obj/machinery/hydroponics/proc/adjustNutri(adjustamt)
-	nutrilevel = clamp(nutrilevel + adjustamt, 0, maxnutri)
+	nutrilevel = CLAMP(nutrilevel + adjustamt, 0, maxnutri)
 
 /obj/machinery/hydroponics/proc/adjustWater(adjustamt)
-	waterlevel = clamp(waterlevel + adjustamt, 0, maxwater)
+	waterlevel = CLAMP(waterlevel + adjustamt, 0, maxwater)
 
 	if(adjustamt>0)
 		adjustToxic(-round(adjustamt/4))//Toxicity dilutation code. The more water you put in, the lesser the toxin concentration.
 
 /obj/machinery/hydroponics/proc/adjustHealth(adjustamt)
 	if(myseed && !dead)
-		plant_health = clamp(plant_health + adjustamt, 0, myseed.endurance)
+		plant_health = CLAMP(plant_health + adjustamt, 0, myseed.endurance)
 
 /obj/machinery/hydroponics/proc/adjustToxic(adjustamt)
-	toxic = clamp(toxic + adjustamt, 0, 100)
+	toxic = CLAMP(toxic + adjustamt, 0, 100)
 
 /obj/machinery/hydroponics/proc/adjustPests(adjustamt)
-	pestlevel = clamp(pestlevel + adjustamt, 0, 10)
+	pestlevel = CLAMP(pestlevel + adjustamt, 0, 10)
 
 /obj/machinery/hydroponics/proc/adjustWeeds(adjustamt)
-	weedlevel = clamp(weedlevel + adjustamt, 0, 10)
+	weedlevel = CLAMP(weedlevel + adjustamt, 0, 10)
 
 /obj/machinery/hydroponics/proc/spawnplant() // why would you put strange reagent in a hydro tray you monster I bet you also feed them blood
 	var/list/livingplants = list(/mob/living/simple_animal/hostile/tree, /mob/living/simple_animal/hostile/killertomato)

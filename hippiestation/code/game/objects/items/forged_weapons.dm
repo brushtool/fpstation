@@ -75,7 +75,7 @@
 	icon_state = "forged_sword"
 	item_state = "forged_sword"
 	alternate_worn_icon = 'hippiestation/icons/mob/belt.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = SLOT_BELT
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	weapon_type = MELEE_TYPE_SWORD
 	stabby = TRANSFER_SHARPER
@@ -90,7 +90,7 @@
 	icon_state = "forged_mace"
 	item_state = "forged_mace"
 	alternate_worn_icon = 'hippiestation/icons/mob/belt.dmi'
-	slot_flags = ITEM_SLOT_BELT
+	slot_flags = SLOT_BELT
 	hitsound = 'hippiestation/sound/misc/crunch.ogg'
 	weapon_type = MELEE_TYPE_MACE
 	stabby = TRANSFER_PARTIALLY_BLUNT
@@ -215,11 +215,11 @@
 			return FALSE
 
 		if(prob(chance))
-			playsound(src, 'hippiestation/sound/halflife/bustconcrete1.ogg', 100, 1)
+			playsound(src, 'face/sound/impacts/meteorimpact.ogg', 100, 1)
 			W.dismantle_wall(TRUE)
 
 		else
-			playsound(src, 'hippiestation/sound/halflife/bustconcrete2.ogg', 50, 1)
+			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 			W.add_dent(WALL_DENT_HIT)
 			visible_message("<span class='danger'>[user] has smashed [W] with [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 	return TRUE
@@ -288,7 +288,7 @@
 
 /obj/item/ammo_casing/forged
 	name = "forged bullet casing"
-	desc = "A custom bullet casing designed to be quickly changeable to any caliber. Utilizes, what else, bluespace technology and quantum entanglement to make every casing under you turn into the same caliber at once!"
+	desc = "A custom bullet casing designed to be quickly changeable to any caliber"
 	projectile_type = /obj/item/projectile/bullet/forged
 	var/datum/reagent/reagent_type
 	var/static/list/calibers = list("357" = 4.5, "a762" = 5, "n762" = 5, ".50" = 6, "38" = 1.5, "10mm" = 3, "9mm" = 2, "4.6x30mm" = 2, ".45" = 2.5, "a556" = 3.5, "mm195129" = 4.5, "shotgun" = 3.5)
@@ -309,14 +309,3 @@
 			FF.reagent_type = reagent_type
 			FF.assign_properties(reagent_type, calibers[caliber])
 			desc = "A custom [caliber] bullet casing"
-			assign_properties()
-			var/turf/T = get_turf(user)
-			for(var/obj/item/ammo_casing/forged/F in T)
-				if(F == src)
-					continue
-				var/obj/item/projectile/bullet/forged/FK = F.BB
-				FK.reagent_type = reagent_type
-				FK.assign_properties(reagent_type, calibers[caliber])
-				F.caliber = caliber
-				F.desc = desc
-				F.assign_properties()

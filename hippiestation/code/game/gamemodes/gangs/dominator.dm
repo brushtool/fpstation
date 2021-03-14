@@ -130,8 +130,7 @@
 
 /obj/machinery/dominator/obj_break(damage_flag)
 	. = ..()
-	if(!(stat & BROKEN))
-		set_broken()
+	set_broken()
 
 /obj/machinery/dominator/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))

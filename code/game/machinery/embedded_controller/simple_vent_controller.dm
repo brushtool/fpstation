@@ -39,7 +39,7 @@
 	density = FALSE
 
 	frequency = FREQ_ATMOS_CONTROL
-	power_channel = AREA_USAGE_ENVIRON
+	power_channel = ENVIRON
 
 	// Setup parameters only
 	var/airpump_tag

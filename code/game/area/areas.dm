@@ -34,6 +34,12 @@
 	var/power_equip = TRUE
 	var/power_light = TRUE
 	var/power_environ = TRUE
+	var/used_equip = 0
+	var/used_light = 0
+	var/used_environ = 0
+	var/static_equip
+	var/static_light = 0
+	var/static_environ
 
 	var/has_gravity = 0
 	var/noteleport = FALSE			//Are you forbidden from teleporting to the area? (centcom, mobs, wizard, hand teleporter)
@@ -55,20 +61,11 @@
 	var/list/cameras
 	var/list/firealarms
 	var/firedoors_last_closed_on = 0
-	/// Can the Xenobio management console transverse this area by default?
-	var/xenobiology_compatible = FALSE
-	/// typecache to limit the areas that atoms in this area can smooth with, used for shuttles IIRC
-	var/list/canSmoothWithAreas
+	var/xenobiology_compatible = FALSE //Can the Xenobio management console transverse this area by default?
+	var/list/canSmoothWithAreas //typecache to limit the areas that atoms in this area can smooth with
 
-	var/list/power_usage
-
-
-/**
-  * A list of teleport locations
-  *
-  * Adding a wizard area teleport list because motherfucking lag -- Urist
-  * I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game
-  */
+/*Adding a wizard area teleport list because motherfucking lag -- Urist*/
+/*I am far too lazy to make it a proper list of areas so I'll just make it run the usual telepot routine at the start of the game*/
 GLOBAL_LIST_EMPTY(teleportlocs)
 
 /proc/process_teleport_locs()
@@ -93,7 +90,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	// rather than waiting for atoms to initialize.
 	if (unique)
 		GLOB.areas_by_type[type] = src
-	power_usage = new /list(AREA_USAGE_LEN) // Some atoms would like to use power in Initialize()
 	return ..()
 
 /area/Initialize()
@@ -359,11 +355,11 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	if(always_unpowered)
 		return 0
 	switch(chan)
-		if(AREA_USAGE_EQUIP)
+		if(EQUIP)
 			return power_equip
-		if(AREA_USAGE_LIGHT)
+		if(LIGHT)
 			return power_light
-		if(AREA_USAGE_ENVIRON)
+		if(ENVIRON)
 			return power_environ
 
 	return 0
@@ -378,29 +374,48 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		M.power_change()				// reverify power status (to update icons etc.)
 	update_icon()
 
+/area/proc/usage(chan)
+	var/used = 0
+	switch(chan)
+		if(LIGHT)
+			used += used_light
+		if(EQUIP)
+			used += used_equip
+		if(ENVIRON)
+			used += used_environ
+		if(TOTAL)
+			used += used_light + used_equip + used_environ
+		if(STATIC_EQUIP)
+			used += static_equip
+		if(STATIC_LIGHT)
+			used += static_light
+		if(STATIC_ENVIRON)
+			used += static_environ
+	return used
 
-/**
-  * Add a static amount of power load to an area
-  *
-  * Possible channels
-  * *AREA_USAGE_STATIC_EQUIP
-  * *AREA_USAGE_STATIC_LIGHT
-  * *AREA_USAGE_STATIC_ENVIRON
-  */
 /area/proc/addStaticPower(value, powerchannel)
 	switch(powerchannel)
-		if(AREA_USAGE_STATIC_START to AREA_USAGE_STATIC_END)
-			power_usage[powerchannel] += value
+		if(STATIC_EQUIP)
+			static_equip += value
+		if(STATIC_LIGHT)
+			static_light += value
+		if(STATIC_ENVIRON)
+			static_environ += value
 
 /area/proc/clear_usage()
-	for(var/i in AREA_USAGE_DYNAMIC_START to AREA_USAGE_DYNAMIC_END)
-		power_usage[i] = 0
+	used_equip = 0
+	used_light = 0
+	used_environ = 0
 
 /area/proc/use_power(amount, chan)
-	switch(chan)
-		if(AREA_USAGE_DYNAMIC_START to AREA_USAGE_DYNAMIC_END)
-			power_usage[chan] += amount
 
+	switch(chan)
+		if(EQUIP)
+			used_equip += amount
+		if(LIGHT)
+			used_light += amount
+		if(ENVIRON)
+			used_environ += amount
 
 
 /area/Entered(atom/movable/M)
@@ -455,10 +470,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		return max_grav
 
 	if(isspaceturf(T)) // Turf never has gravity
-		return FALSE
-	if(istype(T, /turf/open/openspace)) //openspace in a space area doesn't get gravity
-		if(istype(get_area(T), /area/space))
-			return FALSE
+		return 0
 
 	var/area/A = get_area(T)
 	if(A.has_gravity) // Areas which always has gravity

@@ -5,9 +5,6 @@
 	GLOB.all_clockwork_mobs -= src
 	GLOB.mob_directory -= tag
 	focus = null
-	if(length(progressbars))
-		stack_trace("[src] destroyed with elements in its progressbars list")
-		progressbars = null
 	for (var/alert in alerts)
 		clear_alert(alert, TRUE)
 	if(observers && observers.len)
@@ -240,14 +237,14 @@
 
 	if(!slot_priority)
 		slot_priority = list( \
-			ITEM_SLOT_BACK, ITEM_SLOT_ID,\
-			ITEM_SLOT_ICLOTHING, ITEM_SLOT_OCLOTHING,\
-			ITEM_SLOT_MASK, ITEM_SLOT_HEAD, ITEM_SLOT_NECK,\
-			ITEM_SLOT_FEET, ITEM_SLOT_GLOVES,\
-			ITEM_SLOT_EARS, ITEM_SLOT_EYES,\
-			ITEM_SLOT_BELT, ITEM_SLOT_SUITSTORE,\
-			ITEM_SLOT_LPOCKET, ITEM_SLOT_RPOCKET,\
-			ITEM_SLOT_DEX_STORAGE\
+			SLOT_BACK, SLOT_WEAR_ID,\
+			SLOT_W_UNIFORM, SLOT_WEAR_SUIT,\
+			SLOT_WEAR_MASK, SLOT_HEAD, SLOT_NECK,\
+			SLOT_SHOES, SLOT_GLOVES,\
+			SLOT_EARS, SLOT_GLASSES,\
+			SLOT_BELT, SLOT_S_STORE,\
+			SLOT_L_STORE, SLOT_R_STORE,\
+			SLOT_GENERC_DEXTROUS_STORAGE\
 		)
 
 	for(var/slot in slot_priority)
@@ -261,7 +258,7 @@
 /mob/proc/reset_perspective(atom/A)
 	if(client)
 		if(A)
-			if(ismovable(A))
+			if(ismovableatom(A))
 				//Set the the thing unless it's us
 				if(A != src)
 					client.perspective = EYE_PERSPECTIVE
@@ -530,10 +527,7 @@
 			stat(null, "Next Map: [cached.map_name]")
 		stat(null, "Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]")
 		stat(null, "Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]")
-		if (SSticker.round_start_time)
-			stat(null, "Round Time: [gameTimestamp("hh:mm:ss", (world.time - SSticker.round_start_time))]")
-		else
-			stat(null, "Lobby Time: [gameTimestamp("hh:mm:ss", 0)]")
+		stat(null, "Round Time: [worldtime2text()]")
 		stat(null, "Station Time: [station_time_timestamp()]")
 		stat(null, "Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
 		if(SSshuttle.emergency)

@@ -1,4 +1,3 @@
-GLOBAL_LIST_EMPTY(station_turfs)
 /turf
 	icon = 'icons/turf/floors.dmi'
 	level = 1
@@ -24,7 +23,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
-	var/list/explosion_throw_details
 
 	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
@@ -34,8 +32,6 @@ GLOBAL_LIST_EMPTY(station_turfs)
 							//IE if the turf is supposed to be water, set TRUE.
 
 	var/tiled_dirt = FALSE // use smooth tiled dirt decal
-
-	vis_flags = VIS_INHERIT_PLANE|VIS_INHERIT_ID	//when this be added to vis_contents of something it inherit something.plane and be associatet with something on clicking, important for visualisation of turf in openspace and interraction with openspace that show you turf.
 
 /turf/vv_edit_var(var_name, new_value)
 	var/static/list/banned_edits = list("x", "y", "z")
@@ -145,18 +141,11 @@ GLOBAL_LIST_EMPTY(station_turfs)
 /turf/proc/zAirOut(direction, turf/source)
 	return FALSE
 
-/turf/proc/zImpact(atom/movable/A, levels = 1, turf/prev_turf)
-	var/flags = NONE
-	var/mov_name = A.name
+/turf/proc/zImpact(atom/movable/A, levels = 1)
 	for(var/i in contents)
 		var/atom/thing = i
-		flags |= thing.intercept_zImpact(A, levels)
-		if(flags & FALL_STOP_INTERCEPTING)
-			break
-	if(prev_turf && !(flags & FALL_NO_MESSAGE))
-		prev_turf.visible_message("<span class='danger'>[mov_name] falls through [prev_turf]!</span>")
-	if(flags & FALL_INTERCEPTED)
-		return
+		if(thing.intercept_zImpact(A, levels))
+			return FALSE
 	if(zFall(A, ++levels))
 		return FALSE
 	A.visible_message("<span class='danger'>[A] crashes into [src]!</span>")
@@ -172,10 +161,11 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
+	A.visible_message("<span class='danger'>[A] falls through [src]!</span>")
 	A.zfalling = TRUE
 	A.forceMove(target)
 	A.zfalling = FALSE
-	target.zImpact(A, levels, src)
+	target.zImpact(A, levels)
 	return TRUE
 
 /turf/proc/handleRCL(obj/item/twohanded/rcl/C, mob/user)
@@ -271,6 +261,8 @@ GLOBAL_LIST_EMPTY(station_turfs)
 
 /turf/Entered(atom/movable/AM)
 	..()
+	if(explosion_level && AM.ex_check(explosion_id))
+		AM.ex_act(explosion_level)
 
 	// If an opaque movable atom moves around we need to potentially update visibility.
 	if (AM.opacity)
@@ -381,7 +373,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	var/datum/progressbar/progress = new(user, things.len, src)
 	while (do_after(usr, 10, TRUE, src, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, progress)))
 		stoplag(1)
-	progress.end_progress()
+	qdel(progress)
 
 	return TRUE
 
@@ -448,17 +440,12 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	for(var/V in contents)
 		var/atom/A = V
 		if(!QDELETED(A) && A.level >= affecting_level)
-			if(ismovable(A))
+			if(ismovableatom(A))
 				var/atom/movable/AM = A
 				if(!AM.ex_check(explosion_id))
 					continue
-			switch(severity)
-				if(EXPLODE_DEVASTATE)
-					SSexplosions.highobj += A
-				if(EXPLODE_HEAVY)
-					SSexplosions.medobj += A
-				if(EXPLODE_LIGHT)
-					SSexplosions.lowobj += A
+			A.ex_act(severity, target)
+			CHECK_TICK
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
 	. = (prob(probability) || force)

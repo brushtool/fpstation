@@ -67,7 +67,7 @@ GLOBAL_LIST_EMPTY(all_wormholes) // So we can pick wormholes to teleport to
 		if(!(ismecha(M) && mech_sized))
 			return
 
-	if(ismovable(M))
+	if(ismovableatom(M))
 		if(GLOB.all_wormholes.len)
 			var/obj/effect/portal/wormhole/P = pick(GLOB.all_wormholes)
 			if(P && isturf(P.loc))

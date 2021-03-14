@@ -222,11 +222,3 @@ tools/Paint.NetDMIPlugin/Paint.NetDMIPlugin.csproj.user
 =======
 tts/
 >>>>>>> 9d6960d59236aeb316c5f290b1c9757e3fe90dac
-
-# Ignore custom music and title screens (amend as appropriate)
-/config/jukebox_music/sounds/*
-!/config/jukebox_music/sounds/exclude
-/config/title_music/sounds/*
-!/config/title_music/sounds/exclude
-/config/title_screens/images/*
-!/config/title_screens/images/exclude

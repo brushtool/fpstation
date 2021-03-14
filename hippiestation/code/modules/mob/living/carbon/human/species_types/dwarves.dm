@@ -22,7 +22,7 @@
 	return FALSE
 
 /datum/species/dwarf/can_equip(obj/item/I, slot, disable_warning, mob/living/carbon/human/H, bypass_equip_delay_self = FALSE)
-	if((slot == ITEM_SLOT_ICLOTHING) && !is_type_in_list(src, I.species_exception))
+	if((slot == SLOT_W_UNIFORM) && !is_type_in_list(src, I.species_exception))
 		return FALSE
 	return ..()
 
@@ -45,7 +45,7 @@
 		if(istype(chem, /datum/reagent/consumable/ethanol))
 			var/datum/reagent/consumable/ethanol/theGoodStuff = chem
 			var/boozePower = sqrt(theGoodStuff.volume) * theGoodStuff.boozepwr * DWARF_ALCOHOL_RATE
-			dwarfDrunkness = clamp(dwarfDrunkness + boozePower, 0, 100)
+			dwarfDrunkness = CLAMP(dwarfDrunkness + boozePower, 0, 100)
 			return TRUE // Don't metabolize alcohol like normal humans do.
 
 /datum/species/dwarf/spec_life(mob/living/carbon/human/H)

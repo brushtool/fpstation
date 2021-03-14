@@ -5,6 +5,7 @@
 	var/spread_delay = 10
 	var/decay_factor = 2//the rate at which it dies
 
+
 /obj/effect/particle_effect/vapour/master/Initialize()
 	. = ..()
 	VM = src
@@ -24,6 +25,7 @@
 			V.On_Tick()
 	..()
 
+
 /obj/effect/particle_effect/vapour/master/Destroy()
 	LAZYREMOVE(VM.newvapes, src)
 	STOP_PROCESSING(SSreagent_states, src)
@@ -36,12 +38,13 @@
 			V.On_Tick()
 	return ..()
 
+
 /obj/effect/particle_effect/vapour/master/proc/Merge_Master()
 	for(var/obj/effect/particle_effect/vapour/master/M in orange(5, src))//a little costly but it only does it once and is much better than calling it on process
 		if(M.reagent_type.type == reagent_type.type)
 			volume += M.volume
 			M.kill_vapour()
-	spread_delay = clamp(100 / (volume * 0.001), 2, 60) //spread delay is inversely proportional to volume
+	spread_delay = CLAMP(100 / (volume * 0.001), 2, 60) //spread delay is inversely proportional to volume
 	decay_factor = min(volume * 0.00005, 10)//decay is proportional to volume so higher volume means faster spread but also a relatively faster death
 
 
@@ -61,14 +64,12 @@
 	CHECK_TICK
 	..()
 
+
 GLOBAL_LIST_EMPTY(vapour)
 /obj/effect/particle_effect/vapour
 	name = "vapour"
-	icon = 'icons/effects/96x96.dmi'
-	icon_state = "smoke"
-	pixel_x = -32
-	pixel_y = -32
-	alpha = 50
+	icon = 'icons/effects/atmospherics.dmi'
+	icon_state = "chem_gas_old"
 	opacity = 0
 	layer = FLY_LAYER
 	anchored = TRUE
@@ -81,6 +82,7 @@ GLOBAL_LIST_EMPTY(vapour)
 /obj/effect/particle_effect/vapour/Initialize()
 	. = ..()
 	LAZYADD(GLOB.vapour, src)
+
 
 /obj/effect/particle_effect/vapour/Destroy()
 	LAZYREMOVE(GLOB.vapour, src)
@@ -106,6 +108,7 @@ GLOBAL_LIST_EMPTY(vapour)
 	if(color != reagent_type.color)
 		add_atom_colour(reagent_type.color, FIXED_COLOUR_PRIORITY)
 
+
 	for(var/mob/living/L in range(0,src))
 		vape_mob(L)
 		VM.volume -= 10
@@ -122,6 +125,7 @@ GLOBAL_LIST_EMPTY(vapour)
 			VM.volume -= S.volume_rate * 0.5
 			kill_vapour()
 
+
 /obj/effect/particle_effect/vapour/proc/spread_vapour()
 	var/turf/t_loc = get_turf(src)
 	var/clear = TRUE
@@ -129,10 +133,12 @@ GLOBAL_LIST_EMPTY(vapour)
 	if(!t_loc)
 		return
 
+
 	for(var/turf/T in t_loc.GetAtmosAdjacentTurfs())
 		if(isspaceturf(T))//space will drain volume
 			VM.volume -= 100
 			continue
+
 		for(var/I in T)
 			if(istype(I, /obj/effect/particle_effect/vapour))//checks the tile for any vapour, prevents stacking of the same type
 				var/obj/effect/particle_effect/vapour/foundvape = I

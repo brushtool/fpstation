@@ -175,8 +175,7 @@ hippie end */
 	materials = list(MAT_METAL = 2000, MAT_GLASS = 500)
 	reagents_list = list(/datum/reagent/uranium/radium = 20)
 	build_path = /obj/item/gun/energy/floragun
-	// hippie -- It's a tool, but it IN THE TOOLS SECTION
-	category = list("Tool Designs")
+	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
 /datum/design/large_grenade

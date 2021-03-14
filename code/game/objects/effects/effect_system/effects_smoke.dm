@@ -94,9 +94,10 @@ hippie end */
 				S.set_opacity(TRUE)
 			newsmokes.Add(S)
 
-	//the smoke spreads rapidly but not instantly
-	for(var/obj/effect/particle_effect/smoke/SM in newsmokes)
-		addtimer(CALLBACK(SM, /obj/effect/particle_effect/smoke.proc/spread_smoke), 1)
+	if(newsmokes.len)
+		spawn(1) //the smoke spreads rapidly but not instantly
+			for(var/obj/effect/particle_effect/smoke/SM in newsmokes)
+				SM.spread_smoke()
 
 
 /datum/effect_system/smoke_spread
@@ -116,7 +117,7 @@ hippie end */
 	var/obj/effect/particle_effect/smoke/S = new effect_type(location)
 	S.amount = amount
 	if(S.amount)
-		INVOKE_ASYNC(S, /obj/effect/particle_effect/smoke/chem.proc/spread_smoke)
+		S.spread_smoke()
 
 
 /////////////////////////////////////////////
@@ -255,6 +256,8 @@ hippie end */
 	reagents.reaction(M, INGEST, fraction)
 	return 1
 
+
+
 /datum/effect_system/smoke_spread/chem
 	var/obj/chemholder
 	effect_type = /obj/effect/particle_effect/smoke/chem
@@ -267,7 +270,8 @@ hippie end */
 	R.my_atom = chemholder
 
 /datum/effect_system/smoke_spread/chem/Destroy()
-	QDEL_NULL(chemholder)
+	qdel(chemholder)
+	chemholder = null
 	return ..()
 
 /datum/effect_system/smoke_spread/chem/set_up(datum/reagents/carry = null, radius = 1, loca, silent = FALSE)
@@ -277,7 +281,7 @@ hippie end */
 		location = get_turf(loca)
 	amount = radius
 	carry.copy_to(chemholder, carry.total_volume)
-	carry.clear_reagents()
+
 	if(!silent)
 		var/contained = ""
 		for(var/reagent in carry.reagent_list)
@@ -313,7 +317,7 @@ hippie end */
 		S.add_atom_colour(mixcolor, FIXED_COLOUR_PRIORITY) // give the smoke color, if it has any to begin with
 	S.amount = amount
 	if(S.amount)
-		INVOKE_ASYNC(S, /obj/effect/particle_effect/smoke/chem.proc/spread_smoke) //calling process right now so the smoke immediately attacks mobs.
+		S.spread_smoke() //calling process right now so the smoke immediately attacks mobs.
 
 
 /////////////////////////////////////////////

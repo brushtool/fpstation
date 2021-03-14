@@ -53,21 +53,9 @@
 /obj/machinery/chem_master/contents_explosion(severity, target)
 	..()
 	if(beaker)
-		switch(severity)
-			if(EXPLODE_DEVASTATE)
-				SSexplosions.highobj += beaker
-			if(EXPLODE_HEAVY)
-				SSexplosions.medobj += beaker
-			if(EXPLODE_LIGHT)
-				SSexplosions.lowobj += beaker
+		beaker.ex_act(severity, target)
 	if(bottle)
-		switch(severity)
-			if(EXPLODE_DEVASTATE)
-				SSexplosions.highobj += bottle
-			if(EXPLODE_HEAVY)
-				SSexplosions.medobj += bottle
-			if(EXPLODE_LIGHT)
-				SSexplosions.lowobj += bottle
+		bottle.ex_act(severity, target)
 
 /obj/machinery/chem_master/handle_atom_del(atom/A)
 	..()
@@ -257,7 +245,7 @@
 			amount = text2num(input(usr,
 				"Max 10. Buffer content will be split evenly.",
 				"How many to make?", 1))
-		amount = clamp(round(amount), 0, 10)
+		amount = CLAMP(round(amount), 0, 10)
 		if (amount <= 0)
 			return FALSE
 		// Get units per item
@@ -283,7 +271,7 @@
 				"Maximum [vol_each_max] units per item.",
 				"How many units to fill?",
 				vol_each_max))
-		vol_each = clamp(vol_each, 0, vol_each_max)
+		vol_each = CLAMP(vol_each, 0, vol_each_max)
 		if(vol_each <= 0)
 			return FALSE
 		// Get item name

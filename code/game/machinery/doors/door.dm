@@ -7,7 +7,7 @@
 	density = TRUE
 	move_resist = MOVE_FORCE_VERY_STRONG
 	layer = OPEN_DOOR_LAYER
-	power_channel = AREA_USAGE_ENVIRON
+	power_channel = ENVIRON
 	max_integrity = 350
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70)
 	CanAtmosPass = ATMOS_PASS_DENSITY
@@ -36,7 +36,6 @@
 	var/red_alert_access = FALSE //if TRUE, this door will always open on red alert
 	var/poddoor = FALSE
 	var/unres_sides = 0 //Unrestricted sides. A bitflag for which direction (if any) can open the door with no access
-	var/safety_mode = FALSE ///Whether or not the airlock can be opened with bare hands while unpowered
 
 /obj/machinery/door/examine(mob/user)
 	. = ..()
@@ -47,8 +46,6 @@
 			. += "<span class='notice'>In the event of a red alert, its access requirements will automatically lift.</span>"
 	if(!poddoor)
 		. += "<span class='notice'>Its maintenance panel is <b>screwed</b> in place.</span>"
-	if(safety_mode)
-		. += "<span class='notice'>It has labels indicating that it has an emergency mechanism to open it with <b>just your hands</b> if there's no power.</span>"
 
 /obj/machinery/door/check_access_list(list/access_list)
 	if(red_alert_access && GLOB.security_level >= SEC_LEVEL_RED)
@@ -82,14 +79,6 @@
 		spark_system = null
 	return ..()
 
-/obj/machinery/door/proc/try_safety_unlock(mob/user)
-	if(safety_mode && !hasPower() && density)
-		to_chat(user, "<span class='notice'>You begin unlocking the airlock safety mechanism...</span>")
-		if(do_after(user, 15 SECONDS, target = src))
-			try_to_crowbar(null, user)
-			return TRUE
-	return FALSE
-
 /obj/machinery/door/Bumped(atom/movable/AM)
 	. = ..() // hippie -- port bumped comsig for better guardian booms
 	if(operating || (obj_flags & EMAGGED))
@@ -104,8 +93,6 @@
 				return	//Can bump-open one airlock per second. This is to prevent shock spam.
 			M.last_bumped = world.time
 			if(M.restrained() && !check_access(null))
-				return
-			if(try_safety_unlock(M))
 				return
 			bumpopen(M)
 			return
@@ -146,8 +133,8 @@
 /obj/machinery/door/proc/bumpopen(mob/user)
 	if(operating)
 		return
-	add_fingerprint(user)
-	if(!requiresID())
+	src.add_fingerprint(user)
+	if(!src.requiresID())
 		user = null
 
 	if(density && !(obj_flags & EMAGGED))
@@ -160,8 +147,6 @@
 /obj/machinery/door/attack_hand(mob/user)
 	. = ..()
 	if(.)
-		return
-	if(try_safety_unlock(user))	
 		return
 	return try_to_activate_door(user)
 
@@ -402,8 +387,3 @@
 
 /obj/machinery/door/GetExplosionBlock()
 	return density ? real_explosion_block : 0
-
-/obj/machinery/door/power_change()
-	. = ..()
-	if(. && !(stat & NOPOWER))
-		autoclose_in(rand(0.5 SECONDS, 3 SECONDS))

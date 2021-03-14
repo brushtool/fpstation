@@ -10,7 +10,7 @@
 	var/regex/R
 
 /datum/component/beetlejuice/Initialize()
-	if(!ismovable(parent))
+	if(!ismovableatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
 	first_heard = list()

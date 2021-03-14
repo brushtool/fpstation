@@ -84,7 +84,7 @@ Difficulty: Very Hard
 	chosen_attack_num = 4
 
 /mob/living/simple_animal/hostile/megafauna/colossus/OpenFire()
-	anger_modifier = clamp(((maxHealth - health)/50),0,20)
+	anger_modifier = CLAMP(((maxHealth - health)/50),0,20)
 	ranged_cooldown = world.time + 120
 
 	if(client)
@@ -256,10 +256,7 @@ Difficulty: Very Hard
 /obj/item/projectile/colossus/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(isturf(target) || isobj(target))
-		if(isobj(target))
-			SSexplosions.medobj += target
-		else
-			SSexplosions.medturf += target
+		target.ex_act(EXPLODE_HEAVY)
 
 
 

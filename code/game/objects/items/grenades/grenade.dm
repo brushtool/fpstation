@@ -70,7 +70,7 @@
 		add_fingerprint(user)
 		if(msg)
 			to_chat(user, "<span class='warning'>You prime [src]! [capitalize(DisplayTimeText(det_time))]!</span>")
-	playsound(src, pick('sound/weapons/armbomb.ogg', 'hippiestation/sound/halflife/takecover.ogg', 'hippiestation/sound/halflife/grenade.ogg'), volume, 0)
+	playsound(src, 'sound/weapons/armbomb.ogg', volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
 	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
@@ -102,7 +102,7 @@
 	if(time != null)
 		if(time < 3)
 			time = 3
-		det_time = round(clamp(time * 10, 0, 50))
+		det_time = round(CLAMP(time * 10, 0, 50))
 	else
 		var/previous_time = det_time
 		switch(det_time)

@@ -136,7 +136,7 @@
 	. = ..()
 	if(!ishuman(user))
 		return
-	if(slot == ITEM_SLOT_HEAD)
+	if(slot == SLOT_HEAD)
 		user.grant_language(/datum/language/piratespeak/)
 		to_chat(user, "<span class='boldnotice'You suddenly know how to speak like a pirate!</span>")
 
@@ -145,7 +145,7 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
-	if(H.get_item_by_slot(ITEM_SLOT_HEAD) == src)
+	if(H.get_item_by_slot(SLOT_HEAD) == src)
 		user.remove_language(/datum/language/piratespeak/)
 		to_chat(user, "<span class='boldnotice'You can no longer speak like a pirate.</span>")
 
@@ -354,7 +354,7 @@
 
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
-	if (slot == ITEM_SLOT_HEAD)
+	if (slot == SLOT_HEAD)
 		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
@@ -389,13 +389,13 @@
 	
 /obj/item/clothing/head/kippah
 	name = "kippah"
-	desc = "Signals that you follow the Halakha. Keeps the head covered and the soul extra-Orthodox." 
+	desc = "Signals that you follow the Jewish Halakha. Keeps the head covered and the soul extra-Orthodox." 
 	icon_state = "kippah"
 	
-/obj/item/clothing/head/medievaltophat
-	name = "medieval Top hat"
-	desc = "A silly looking hat, intended to be placed on the heads of the station's religious minorities."
-	icon_state = "medievaltophat"
+/obj/item/clothing/head/medievaljewhat
+	name = "medieval Jew hat"
+	desc = "A silly looking hat, intended to be placed on the heads of the station's oppressed religious minorities."
+	icon_state = "medievaljewhat"
 
 /obj/item/clothing/head/taqiyahwhite
 	name = "white taqiyah"

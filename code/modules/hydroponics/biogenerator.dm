@@ -30,13 +30,7 @@
 /obj/machinery/biogenerator/contents_explosion(severity, target)
 	..()
 	if(beaker)
-		switch(severity)
-			if(EXPLODE_DEVASTATE)
-				SSexplosions.highobj += beaker
-			if(EXPLODE_HEAVY)
-				SSexplosions.medobj += beaker
-			if(EXPLODE_LIGHT)
-				SSexplosions.lowobj += beaker
+		beaker.ex_act(severity, target)
 
 /obj/machinery/biogenerator/handle_atom_del(atom/A)
 	..()
@@ -316,7 +310,7 @@
 	else if(href_list["create"])
 		var/amount = (text2num(href_list["amount"]))
 		//Can't be outside these (if you change this keep a sane limit)
-		amount = clamp(amount, 1, 10)
+		amount = CLAMP(amount, 1, 10)
 		var/id = href_list["create"]
 		if(!stored_research.researched_designs.Find(id))
 			//naughty naughty

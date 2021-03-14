@@ -4,7 +4,7 @@
 #define NANO_STRENGTH "strength"
 #define NANO_NONE "none"
 #define NANO_JUMP_USE 30
-#define NANO_CHARGE_DELAY 15
+#define NANO_CHARGE_DELAY 20
 #define NANO_EMP_CHARGE_DELAY 45
 
 #define POWER_PUNCH "QQQ"
@@ -20,7 +20,7 @@
 
 /obj/item/clothing/under/syndicate/combat/nano/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_ICLOTHING)
+	if(slot == SLOT_W_UNIFORM)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/clothing/mask/gas/nano_mask
@@ -32,7 +32,7 @@
 
 /obj/item/clothing/mask/gas/nano_mask/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_MASK)
+	if(slot == SLOT_WEAR_MASK)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /datum/action/item_action/nanojump
@@ -65,7 +65,7 @@
 		if(NS.mode == NANO_STRENGTH)
 			if(istype(T) || istype(S))
 				if(NS.cell.charge >= NANO_JUMP_USE)
-					NS.cut_nano_energy(NANO_JUMP_USE, NANO_CHARGE_DELAY)
+					NS.cut_nano_energy(NANO_JUMP_USE,NANO_CHARGE_DELAY)
 				else
 					to_chat(user, "<span class='warning'>Not enough charge.</span>")
 					return
@@ -89,7 +89,7 @@
 
 /obj/item/clothing/shoes/combat/coldres/nanojump/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_FEET)
+	if(slot == SLOT_SHOES)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/clothing/gloves/combat/nano
@@ -102,7 +102,7 @@
 
 /obj/item/clothing/gloves/combat/nano/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_GLOVES)
+	if(slot == SLOT_GLOVES)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/radio/headset/syndicate/alt/nano
@@ -117,7 +117,7 @@
 
 /obj/item/radio/headset/syndicate/alt/nano/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_EARS)
+	if(slot == SLOT_EARS)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/radio/headset/syndicate/alt/nano/AltClick()
@@ -154,7 +154,7 @@
 
 /obj/item/clothing/glasses/nano_goggles/equipped(mob/user, slot)
 	..()
-	if(slot == ITEM_SLOT_EYES)
+	if(slot == SLOT_GLASSES)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 
 /obj/item/clothing/glasses/nano_goggles/ui_action_click(mob/user, action)
@@ -223,7 +223,7 @@
 	var/cloak_use_rate = 1.2 //cloaked energy consume rate
 	var/speed_use_rate = 2.0 //speed energy consume rate
 	var/crit_energy = 20 //critical energy level
-	var/regen_rate = 4 //rate at which we regen
+	var/regen_rate = 3 //rate at which we regen
 	var/msg_time_react = 0
 	var/trauma_threshold = 30
 	var/obj/item/stock_parts/cell/nano/cell //What type of power cell this uses
@@ -303,11 +303,11 @@
 	if((energy < cell.maxcharge) && mode != NANO_CLOAK && !recharge_cooldown) //if our energy is less than 100, we're not in cloak and don't have a recharge delay timer
 		var/energy2 = regen_rate //store our regen rate here
 		energy2+=energy //add our current energy to it
-		energy=min(cell.maxcharge, energy2) //our energy now equals the energy we had + 0.75 for everytime it iterates through, so it increases by 0.75 every tick until it goes to 100
-	if(recharge_cooldown) //do we have a recharge delay set?
-		recharge_cooldown-- //reduce it
+		energy=min(cell.maxcharge,energy2) //our energy now equals the energy we had + 0.75 for everytime it iterates through, so it increases by 0.75 every tick until it goes to 100
+	if(recharge_cooldown > 0) //do we have a recharge delay set?
+		recharge_cooldown -= 1 //reduce it
 	if(msg_time_react)
-		msg_time_react--
+		msg_time_react -= 1
 	if(cell.charge != energy)
 		cut_nano_energy(cell.charge - energy) //now set our current energy to the variable we modified
 
@@ -321,10 +321,10 @@
 		criticalpower = FALSE //turn it off
 	if(!cell.charge) //did we lose energy?
 		if(mode == NANO_CLOAK) //are we in cloak?
-			recharge_cooldown = NANO_CHARGE_DELAY //then wait 3 seconds to recharge again
+			recharge_cooldown = 15 //then wait 3 seconds(1 value per 2 ticks = 15*2=30/10 = 3 seconds) to recharge again
 		if(mode != NANO_ARMOR && mode != NANO_NONE) //we're not in cloak
 			toggle_mode(NANO_ARMOR, TRUE) //go into it, forced
-	cell.charge = max(0, (cell.charge - amount))
+	cell.charge = max(0,(cell.charge - amount))
 
 /obj/item/clothing/suit/space/hardsuit/nano/proc/addmedicalcharge(amount = 1)
 	if(current_charges < max_charges)
@@ -332,9 +332,9 @@
 
 /obj/item/clothing/suit/space/hardsuit/nano/proc/onmove()
 	if(mode == NANO_CLOAK)
-		cut_nano_energy(cloak_use_rate / upgrademulti, NANO_CHARGE_DELAY)
+		cut_nano_energy(cloak_use_rate / upgrademulti,NANO_CHARGE_DELAY)
 	else if(mode == NANO_SPEED)
-		cut_nano_energy(speed_use_rate * upgrademulti, NANO_CHARGE_DELAY)
+		cut_nano_energy(speed_use_rate * upgrademulti,NANO_CHARGE_DELAY)
 
 /obj/item/clothing/suit/space/hardsuit/nano/hit_reaction(mob/living/carbon/human/user, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/obj/item/projectile/P = hitby
@@ -343,11 +343,11 @@
 			user.visible_message("<span class='danger'>[user]'s shields deflect [attack_text] draining their energy!</span>")
 			if(damage)
 				if(attack_type != STAMINA)
-					cut_nano_energy((5 + damage)*upgrademulti, NANO_CHARGE_DELAY)//laser guns, anything lethal drains 5 + the damage dealt
+					cut_nano_energy((10 + damage)*upgrademulti,NANO_CHARGE_DELAY)//laser guns, anything lethal drains 5 + the damage dealt
 				else if(P.damage_type == STAMINA && attack_type == PROJECTILE_ATTACK)
-					cut_nano_energy(20*upgrademulti, NANO_CHARGE_DELAY)//stamina damage, aka disabler beams
+					cut_nano_energy(20*upgrademulti,NANO_CHARGE_DELAY)//stamina damage, aka disabler beams
 			if(istype(P, /obj/item/projectile/energy/electrode))//if electrode aka taser
-				cut_nano_energy(35*upgrademulti, NANO_CHARGE_DELAY)
+				cut_nano_energy(35*upgrademulti,NANO_CHARGE_DELAY)
 			return TRUE
 		else
 			user.visible_message("<span class='warning'>[user]'s shields fail to deflect [attack_text].</span>")
@@ -436,7 +436,7 @@
 
 			if(NANO_CLOAK)
 				helmet.display_visor_message("Cloak Engaged!")
-				if(prob(hacked? 15: 2))
+				if(prob(hacked?15:2))
 					var/datum/effect_system/spark_spread/spark = new
 					spark.set_up(1, 1, src)
 					spark.start()
@@ -519,15 +519,12 @@
 	Wearer.update_action_buttons_icon()
 	update_icon()
 
-/obj/item/clothing/suit/space/hardsuit/nano/ex_act(severity, severity)
-	. = ..()
-	toggle_mode(NANO_ARMOR)
 
 /obj/item/clothing/suit/space/hardsuit/nano/emp_act(severity)
 	..()
 	if(!severity || shutdown )
 		return
-	cut_nano_energy(cell.charge/severity, NANO_EMP_CHARGE_DELAY)
+	cut_nano_energy(cell.charge/severity,NANO_EMP_CHARGE_DELAY)
 	if((mode == NANO_ARMOR && !cell.charge) || (mode != NANO_ARMOR))
 		if(prob(5/severity))
 			emp_assault()
@@ -688,7 +685,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/nano/equipped(mob/living/carbon/human/user, slot)
 	..()
-	if(slot == ITEM_SLOT_HEAD)
+	if(slot == SLOT_HEAD)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
 		var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 		medsensor.add_hud_to(user)
@@ -736,7 +733,7 @@
 /obj/item/clothing/suit/space/hardsuit/nano/equipped(mob/user, slot)
 	if(ishuman(user))
 		Wearer = user
-	if(slot == ITEM_SLOT_OCLOTHING)
+	if(slot == SLOT_WEAR_SUIT)
 		var/turf/T = get_turf(src)
 		var/area/A = get_area(src)
 		ADD_TRAIT(src, TRAIT_NODROP, CLOTHING_TRAIT)
@@ -846,7 +843,7 @@
 	gloves = /obj/item/clothing/gloves/combat/nano
 	implants = list(/obj/item/implant/explosive/disintegrate)
 	suit_store = /obj/item/tank/internals/emergency_oxygen/recharge
-	internals_slot = ITEM_SLOT_SUITSTORE
+	internals_slot = SLOT_S_STORE
 
 /mob/living/carbon/human/Stat()
 	..()
@@ -1105,13 +1102,13 @@
 		return
 	return ..()
 
-/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force, gentle = FALSE, quickstart = TRUE)
+/obj/item/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback)
 	if(thrower && ishuman(thrower))
 		var/mob/living/carbon/human/H = thrower
 		if(istype(H.wear_suit, /obj/item/clothing/suit/space/hardsuit/nano))
 			var/obj/item/clothing/suit/space/hardsuit/nano/NS = H.wear_suit
 			if(NS.mode == NANO_STRENGTH)
-				. = ..(target, range*1.5, speed*2, thrower, spin, diagonals_first, callback, force, gentle, quickstart = quickstart)
+				. = ..(target, range*1.5, speed*2, thrower, spin, diagonals_first, callback)
 				return
 	. = ..()
 
@@ -1143,9 +1140,9 @@
 				cut_nano_energy(15)
 				Wearer.filters = null
 				animate(Wearer, alpha = 255, time = stealth_cloak_out)
-				addtimer(CALLBACK(src, .proc/resume_cloak), 6, TIMER_UNIQUE|TIMER_OVERRIDE)
+				addtimer(CALLBACK(src, .proc/resume_cloak),6,TIMER_UNIQUE|TIMER_OVERRIDE)
 				return
-		cut_nano_energy(cell.charge, NANO_CHARGE_DELAY)
+		cut_nano_energy(cell.charge,NANO_CHARGE_DELAY)
 
 /obj/item/clothing/suit/space/hardsuit/nano/proc/resume_cloak()
 	if(cell.charge && mode == NANO_CLOAK)
@@ -1208,13 +1205,13 @@
 			sleep(10)
 			if(air_contents.gases[/datum/gas/oxygen][MOLES] < (10*moles_val))
 				air_contents.assert_gas(/datum/gas/oxygen)
-				air_contents.gases[/datum/gas/oxygen][MOLES] = clamp(air_contents.total_moles()+moles_val,0,(10*moles_val))
+				air_contents.gases[/datum/gas/oxygen][MOLES] = CLAMP(air_contents.total_moles()+moles_val,0,(10*moles_val))
 		if(air_contents.return_pressure() != initial(distribute_pressure))
 			distribute_pressure = initial(distribute_pressure)
 
 /obj/item/tank/internals/emergency_oxygen/recharge/equipped(mob/living/carbon/human/wearer, slot)
 	..()
-	if(slot == ITEM_SLOT_SUITSTORE)
+	if(slot == SLOT_S_STORE)
 		ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 		START_PROCESSING(SSobj, src)
 

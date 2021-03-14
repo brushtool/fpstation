@@ -5,7 +5,7 @@
 	due_date = 0 // Game time in deciseconds
 	unique = 1   // 0  Normal book, 1  Should not be treated as normal book, unable to be copied, unable to be modified
 	var/list/remarks = list() //things to read about while learning.
-	var/pages_to_mastery = 4 //Essentially controls how long a mob must keep the book in his hand to actually successfully learn
+	var/pages_to_mastery = 3 //Essentially controls how long a mob must keep the book in his hand to actually successfully learn
 	var/reading = FALSE //sanity
 	var/oneuse = TRUE //default this is true, but admins can var this to 0 if we wanna all have a pass around of the rod form book
 	var/used = FALSE //only really matters if oneuse but it might be nice to know if someone's used it for admin investigations perhaps
@@ -270,7 +270,7 @@
 		var/obj/item/clothing/magichead = new /obj/item/clothing/mask/horsehead/cursed(user.drop_location())
 		if(!user.dropItemToGround(user.wear_mask))
 			qdel(user.wear_mask)
-		user.equip_to_slot_if_possible(magichead, ITEM_SLOT_MASK, TRUE, TRUE)
+		user.equip_to_slot_if_possible(magichead, SLOT_WEAR_MASK, TRUE, TRUE)
 		qdel(src)
 	else
 		to_chat(user,"<span class='notice'>I say thee neigh</span>") //It still lives here
@@ -395,3 +395,18 @@
 		icon_state = "blankscroll"
 
 // I did not include mushpunch's grant, it is not a book and the item does it just fine.
+
+
+//Crafting Recipe books
+
+/obj/item/book/granter/crafting_recipe
+	var/list/crafting_recipe_types = list()
+
+/obj/item/book/granter/crafting_recipe/on_reading_finished(mob/user)
+	. = ..()
+	if(!user.mind)
+		return
+	for(var/crafting_recipe_type in crafting_recipe_types)
+		var/datum/crafting_recipe/R = crafting_recipe_type
+		user.mind.teach_crafting_recipe(crafting_recipe_type)
+		to_chat(user,"<span class='notice'>You learned how to make [initial(R.name)].</span>")

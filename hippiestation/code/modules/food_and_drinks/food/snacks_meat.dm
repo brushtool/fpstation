@@ -27,36 +27,3 @@
 	filling_color = "#000000"
 	tastes = list("meat" = 1)
 	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/monkeycube/cowcube
-	name = "cow cube"
-	desc = "Just add water!"
-	icon_state = "cowcube"
-	icon = 'hippiestation/icons/obj/food/food.dmi'
-	list_reagents = list(/datum/reagent/consumable/milk = 4, /datum/reagent/consumable/nutriment = 4)
-	filling_color = "#000000"
-	tastes = list("milk" = 1)
-	foodtype = MEAT
-	spawned_mob = /mob/living/simple_animal/cow
-
-/obj/item/reagent_containers/food/snacks/monkeycube/chickencube
-	name = "chicken cube"
-	desc = "UCF approved! Just add water!"
-	icon_state = "chickencube"
-	icon = 'hippiestation/icons/obj/food/food.dmi'
-	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
-	filling_color = "#000000"
-	tastes = list("feathers" = 1, "United Chicken Federation propaganda" = 1)
-	foodtype = MEAT
-	spawned_mob = /mob/living/simple_animal/chicken
-
-/obj/item/reagent_containers/food/snacks/monkeycube/monstercube
-	name = "monster cube"
-	desc = "Just add water!"
-	icon_state = "monkeycube"
-	bitesize = 12
-	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
-	filling_color = "#CD853F"
-	tastes = list("Hell" = 1, "diarrhea" = 1)
-	foodtype = MEAT
-	spawned_mob = /mob/living/simple_animal/hostile/netherworld

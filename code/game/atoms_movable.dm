@@ -40,37 +40,6 @@
 
 	var/zfalling = FALSE
 
-	/// Either FALSE, [EMISSIVE_BLOCK_GENERIC], or [EMISSIVE_BLOCK_UNIQUE]
-	var/blocks_emissive = FALSE
-	///Internal holder for emissive blocker object, do not use directly use blocks_emissive
-	var/atom/movable/emissive_blocker/em_block
-
-
-/atom/movable/Initialize(mapload)
-	. = ..()
-	switch(blocks_emissive)
-		if(EMISSIVE_BLOCK_GENERIC)
-			update_emissive_block()
-		if(EMISSIVE_BLOCK_UNIQUE)
-			render_target = ref(src)
-			em_block = new(src, render_target)
-			vis_contents += em_block
-
-/atom/movable/Destroy()
-	QDEL_NULL(em_block)
-	return ..()
-
-/atom/movable/proc/update_emissive_block()
-	if(blocks_emissive != EMISSIVE_BLOCK_GENERIC)
-		return
-	if(length(managed_vis_overlays))
-		for(var/a in managed_vis_overlays)
-			var/obj/effect/overlay/vis/vs
-			if(vs.plane == EMISSIVE_BLOCKER_PLANE)
-				SSvis_overlays.remove_vis_overlay(src, list(vs))
-				break
-	SSvis_overlays.add_vis_overlay(src, icon, icon_state, EMISSIVE_BLOCKER_LAYER, EMISSIVE_BLOCKER_PLANE, dir)
-
 /atom/movable/proc/can_zFall(turf/source, levels = 1, turf/target, direction)
 	if(!direction)
 		direction = DOWN
@@ -562,8 +531,7 @@
 		return
 	return throw_at(target, range, speed, thrower, spin, diagonals_first, callback, force)
 
-///If this returns FALSE then callback will not be called.
-/atom/movable/proc/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE, quickstart = TRUE)
+/atom/movable/proc/throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG) //If this returns FALSE then callback will not be called.
 	. = FALSE
 	if (!target || speed <= 0)
 		return
@@ -645,8 +613,7 @@
 	SSthrowing.processing[src] = TT
 	if (SSthrowing.state == SS_PAUSED && length(SSthrowing.currentrun))
 		SSthrowing.currentrun[src] = TT
-	if (quickstart)
-		TT.tick()
+	TT.tick()
 
 /atom/movable/proc/handle_buckled_mob_movement(newloc,direct)
 	for(var/m in buckled_mobs)

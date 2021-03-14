@@ -4,7 +4,7 @@
 	icon = 'icons/obj/power.dmi'
 	icon_state = "light1"
 	desc = "Make dark."
-	power_channel = AREA_USAGE_LIGHT
+	power_channel = LIGHT
 	/// Set this to a string, path, or area instance to control that area
 	/// instead of the switch's location.
 	var/area/area = null
@@ -41,7 +41,7 @@
 
 	area.lightswitch = !area.lightswitch
 	area.update_icon()
-	playsound(src, 'hippiestation/sound/halflife/lightswitch.ogg', 100, 0)
+
 	for(var/obj/machinery/light_switch/L in area)
 		L.update_icon()
 

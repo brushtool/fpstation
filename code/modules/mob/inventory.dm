@@ -182,7 +182,7 @@
 		held_items[hand_index] = I
 		I.layer = ABOVE_HUD_LAYER
 		I.plane = ABOVE_HUD_PLANE
-		I.equipped(src, ITEM_SLOT_HANDS)
+		I.equipped(src, SLOT_HANDS)
 		if(I.pulledby)
 			I.pulledby.stop_pulling()
 		update_inv_hands()
@@ -395,21 +395,21 @@
 			hidden_slots |= I.transparent_protection
 
 	if(hidden_slots & HIDENECK)
-		obscured |= ITEM_SLOT_NECK
+		obscured |= SLOT_NECK
 	if(hidden_slots & HIDEMASK)
-		obscured |= ITEM_SLOT_MASK
+		obscured |= SLOT_WEAR_MASK
 	if(hidden_slots & HIDEEYES)
-		obscured |= ITEM_SLOT_EYES
+		obscured |= SLOT_GLASSES
 	if(hidden_slots & HIDEEARS)
-		obscured |= ITEM_SLOT_EARS
+		obscured |= SLOT_EARS
 	if(hidden_slots & HIDEGLOVES)
-		obscured |= ITEM_SLOT_GLOVES
+		obscured |= SLOT_GLOVES
 	if(hidden_slots & HIDEJUMPSUIT)
-		obscured |= ITEM_SLOT_ICLOTHING
+		obscured |= SLOT_W_UNIFORM
 	if(hidden_slots & HIDESHOES)
-		obscured |= ITEM_SLOT_FEET
+		obscured |= SLOT_SHOES
 	if(hidden_slots & HIDESUITSTORAGE)
-		obscured |= ITEM_SLOT_SUITSTORE
+		obscured |= SLOT_S_STORE
 
 	return obscured
 
@@ -429,13 +429,14 @@
 	if(M.active_storage && M.active_storage.parent && SEND_SIGNAL(M.active_storage.parent, COMSIG_TRY_STORAGE_INSERT, src,M))
 		return TRUE
 
-	var/list/obj/item/possible = list(M.get_inactive_held_item(), M.get_item_by_slot(ITEM_SLOT_BELT), M.get_item_by_slot(ITEM_SLOT_DEX_STORAGE), M.get_item_by_slot(ITEM_SLOT_BACK))
+	var/list/obj/item/possible = list(M.get_inactive_held_item(), M.get_item_by_slot(SLOT_BELT), M.get_item_by_slot(SLOT_GENERC_DEXTROUS_STORAGE), M.get_item_by_slot(SLOT_BACK))
 	for(var/i in possible)
 		if(!i)
 			continue
 		var/obj/item/I = i
 		if(SEND_SIGNAL(I, COMSIG_TRY_STORAGE_INSERT, src, M))
 			return TRUE
+
 	to_chat(M, "<span class='warning'>You are unable to equip that!</span>")
 	return FALSE
 
@@ -450,10 +451,10 @@
 
 //used in code for items usable by both carbon and drones, this gives the proper back slot for each mob.(defibrillator, backpack watertank, ...)
 /mob/proc/getBackSlot()
-	return ITEM_SLOT_BACK
+	return SLOT_BACK
 
 /mob/proc/getBeltSlot()
-	return ITEM_SLOT_BELT
+	return SLOT_BELT
 
 
 

@@ -99,7 +99,7 @@ Made by Xhuis
 		shadowlings--
 
 	var/thrall_scaling = round(num_players() / 3)
-	required_thralls = clamp(thrall_scaling, 15, 30)
+	required_thralls = CLAMP(thrall_scaling, 15, 30)
 
 	thrall_ratio = required_thralls / 15
 
@@ -162,7 +162,7 @@ Made by Xhuis
 	say_mod = "chitters"
 	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYESPRITES)
 	inherent_traits = list(TRAIT_NOGUNS, TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_PIERCEIMMUNE)
-	no_equip = list(ITEM_SLOT_MASK, ITEM_SLOT_EYES, ITEM_SLOT_GLOVES, ITEM_SLOT_FEET, ITEM_SLOT_ICLOTHING, ITEM_SLOT_SUITSTORE)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_GLASSES, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
 	nojumpsuit = 1
 	mutanteyes = /obj/item/organ/eyes/night_vision/alien/sling
 	burnmod = 1.5 //1.5x burn damage, 2x is excessive

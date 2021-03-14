@@ -208,7 +208,7 @@
 	var/mob/living/carbon/human/active_owner
 
 /obj/item/clothing/neck/necklace/memento_mori/item_action_slot_check(slot)
-	return slot == ITEM_SLOT_NECK
+	return slot == SLOT_NECK
 
 /obj/item/clothing/neck/necklace/memento_mori/dropped(mob/user)
 	..()
@@ -429,7 +429,7 @@
 
 /obj/item/projectile/hook/on_hit(atom/target)
 	. = ..()
-	if(ismovable(target))
+	if(ismovableatom(target))
 		var/atom/movable/A = target
 		if(A.anchored)
 			return
@@ -833,13 +833,13 @@
 	force = 0
 	var/ghost_counter = ghost_check()
 
-	force = clamp((ghost_counter * 4), 0, 75)
+	force = CLAMP((ghost_counter * 4), 0, 75)
 	user.visible_message("<span class='danger'>[user] strikes with the force of [ghost_counter] vengeful spirits!</span>")
 	..()
 
 /obj/item/melee/ghost_sword/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	var/ghost_counter = ghost_check()
-	final_block_chance += clamp((ghost_counter * 5), 0, 75)
+	final_block_chance += CLAMP((ghost_counter * 5), 0, 75)
 	owner.visible_message("<span class='danger'>[owner] is protected by a ring of [ghost_counter] ghosts!</span>")
 	return ..()
 

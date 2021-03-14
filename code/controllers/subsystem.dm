@@ -34,9 +34,6 @@
 	var/runlevels = RUNLEVELS_DEFAULT	//points of the game at which the SS can fire
 
 	var/static/list/failure_strikes //How many times we suspect a subsystem type has crashed the MC, 3 strikes and you're out!
-	//Do not blindly add vars here to the bottom, put it where it goes above
-	//If your var only has two values, put it in as a flag.
-
 
 //Do not override
 ///datum/controller/subsystem/New()
@@ -90,7 +87,7 @@
 		queue_node_flags = queue_node.flags
 
 		if (queue_node_flags & SS_TICKER)
-			if ((SS_flags & (SS_TICKER|SS_BACKGROUND)) != SS_TICKER)
+			if (!(SS_flags & SS_TICKER))
 				continue
 			if (queue_node_priority < SS_priority)
 				break

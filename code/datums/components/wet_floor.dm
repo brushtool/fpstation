@@ -82,7 +82,7 @@
 			lube_flags = NO_SLIP_WHEN_WALKING
 		if(TURF_WET_LUBE)
 			intensity = 80
-			lube_flags = SLIDE | SLIP_WHEN_CRAWLING | GALOSHES_DONT_HELP //hippie edit - GET FUCKED
+			lube_flags = SLIDE | NO_SLIP_WHEN_WALKING //hippie edit - GALOSHES_DONT_HELP -> NO_SLIP_WHEN_WALKING
 		if(TURF_WET_ICE)
 			intensity = 120
 			lube_flags = SLIDE | GALOSHES_DONT_HELP
@@ -179,7 +179,7 @@
 /datum/component/wet_floor/proc/_do_add_wet(type, duration_minimum, duration_add, duration_maximum)
 	var/time = 0
 	if(LAZYACCESS(time_left_list, "[type]"))
-		time = clamp(LAZYACCESS(time_left_list, "[type]") + duration_add, duration_minimum, duration_maximum)
+		time = CLAMP(LAZYACCESS(time_left_list, "[type]") + duration_add, duration_minimum, duration_maximum)
 	else
 		time = min(duration_minimum, duration_maximum)
 	LAZYSET(time_left_list, "[type]", time)

@@ -26,7 +26,7 @@
 		return
 	cut_overlays()
 	if(reagent_icon && reagents && reagents.total_volume)
-		reagent_icon.icon_state = "tankfilling[clamp(round(reagents.total_volume / (tank_volume * 0.2)), 1, 4)]"
+		reagent_icon.icon_state = "tankfilling[CLAMP(round(reagents.total_volume / (tank_volume * 0.2)), 1, 4)]"
 		reagent_icon.color = mix_color_from_reagents(reagents.reagent_list)
 		add_overlay(reagent_icon)
 
@@ -40,7 +40,7 @@
 
 /obj/structure/reagent_dispensers/chemical/Initialize()
 	. = ..()
-	create_reagents(tank_volume, DRAINABLE | AMOUNT_VISIBLE)
+	create_reagents(tank_volume, DRAWABLE | AMOUNT_VISIBLE)
 
 /obj/structure/reagent_dispensers/proc/generate_reagent_icon()
 	if(!use_reagent_icon)
@@ -54,13 +54,13 @@
 
 /obj/structure/reagent_dispensers/chemical/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/screwdriver))
-		if(reagents.flags & DRAINABLE)
+		if(reagents.flags & DRAWABLE)
 			ENABLE_BITFIELD(reagents.flags, OPENCONTAINER)
-			DISABLE_BITFIELD(reagents.flags, DRAINABLE)
+			DISABLE_BITFIELD(reagents.flags, DRAWABLE)
 			to_chat(user, "<span class='notice'>You unfasten the tank's cap.</span>")
 		else if(reagents.flags & OPENCONTAINER)
 			DISABLE_BITFIELD(reagents.flags, OPENCONTAINER)
-			ENABLE_BITFIELD(reagents.flags, DRAINABLE)
+			ENABLE_BITFIELD(reagents.flags, DRAWABLE)
 			to_chat(user, "<span class='notice'>You fasten the tank's cap.</span>")
 		update_icon()
 		playsound(src.loc, 'sound/machines/click.ogg', 20, 1)
@@ -79,14 +79,14 @@
 
 /obj/structure/reagent_dispensers/chemical/examine(mob/user)
 	. = ..()
-	if(reagents.flags & DRAINABLE)
+	if(reagents.flags & DRAWABLE)
 		. += "It's lid is closed."
 	else if(reagents.flags & OPENCONTAINER)
 		. += "It's lid is open."
 
 /obj/structure/reagent_dispensers/chemical/update_icon()
 	..()
-	if(reagents?.flags & DRAINABLE)
+	if(reagents?.flags & DRAWABLE)
 		add_overlay("chemlid")
 
 /obj/structure/reagent_dispensers/watertank

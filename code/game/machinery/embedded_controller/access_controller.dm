@@ -5,7 +5,7 @@
 #define CYCLE_INTERIOR	5
 
 /obj/machinery/doorButtons
-	power_channel = AREA_USAGE_ENVIRON
+	power_channel = ENVIRON
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 4

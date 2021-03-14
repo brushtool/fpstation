@@ -11,11 +11,8 @@
 	if(A == firer)
 		forceMove(A.loc)
 		return
-	if(isobj(A))
-		SSexplosions.medobj += A
-	else if(isturf(A))
-		SSexplosions.medturf += A
-	playsound(src.loc, 'sound/effects/meteorimpact.ogg', 40, TRUE)
+	A.ex_act(EXPLODE_HEAVY)
+	playsound(src.loc, 'face/sound/impacts/meteorimpact.ogg', 40, 1)
 	for(var/mob/M in urange(10, src))
 		if(!M.stat)
 			shake_camera(M, 3, 1)

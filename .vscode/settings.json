@@ -1,12 +1,5 @@
 {
 	"eslint.workingDirectories": [
-		"./tgui-next"
-	],
-
-	"workbench.editorAssociations": [
-		{
-			"filenamePattern": "*.dmi",
-			"viewType": "imagePreview.previewEditor"
-		}
-	]
+        "./tgui-next"
+    ]
 }

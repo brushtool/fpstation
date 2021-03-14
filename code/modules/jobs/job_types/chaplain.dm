@@ -32,7 +32,7 @@
 		B.icon_state = GLOB.bible_icon_state
 		B.item_state = GLOB.bible_item_state
 		to_chat(H, "<span class='boldnotice'>There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.</span>")
-		H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
+		H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
 		var/nrt = GLOB.holy_weapon_type || /obj/item/nullrod
 		var/obj/item/nullrod/N = new nrt(H)
 		H.put_in_hands(N)
@@ -72,9 +72,9 @@
 			B.name = "The Torah"
 		if("lampism")
 			B.name = "Fluorescent Incandescence"
-		if("lol", "wtf", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
+		if("lol", "wtf", "gay", "penis", "ass", "poo", "badmin", "shitmin", "deadmin", "cock", "cocks", "meme", "memes")
 			B.name = pick("Woodys Got Wood: The Aftermath", "War of the Cocks", "Sweet Bro and Hella Jef: Expanded Edition","F.A.T.A.L. Rulebook")
-			H.adjustBrainLoss(100) // starts off dumb as fuck
+			H.adjustBrainLoss(100) // starts off retarded as fuck
 		if("monkeyism","apism","gorillism","primatism")
 			B.name = pick("Going Bananas", "Bananas Out For Harambe")
 		if("mormonism")
@@ -106,7 +106,7 @@
 	GLOB.bible_name = B.name
 	GLOB.deity = B.deity_name
 
-	H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
+	H.equip_to_slot_or_del(B, SLOT_IN_BACKPACK)
 
 	SSblackbox.record_feedback("text", "religion_name", 1, "[new_religion]", 1)
 	SSblackbox.record_feedback("text", "religion_deity", 1, "[new_deity]", 1)

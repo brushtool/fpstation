@@ -373,7 +373,6 @@
 			new_head.give_flash = TRUE
 			new_head.give_hud = TRUE
 			new_head.remove_clumsy = TRUE
-			new_head.give_book = TRUE
 			M.add_antag_datum(new_head,revolution)
 		else
 			assigned -= M
@@ -551,7 +550,7 @@
 	L.equipOutfit(/datum/outfit/servant_of_ratvar)
 	var/obj/item/clockwork/slab/S = new
 	var/slot = "At your feet"
-	var/list/slots = list("In your left pocket" = ITEM_SLOT_LPOCKET, "In your right pocket" = ITEM_SLOT_RPOCKET, "In your backpack" = ITEM_SLOT_BACKPACK, "On your belt" = ITEM_SLOT_BELT)
+	var/list/slots = list("In your left pocket" = SLOT_L_STORE, "In your right pocket" = SLOT_R_STORE, "In your backpack" = SLOT_IN_BACKPACK, "On your belt" = SLOT_BELT)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		slot = H.equip_in_one_of_slots(S, slots)
@@ -746,6 +745,6 @@
 	if (prob(meteorminutes/2))
 		wavetype = GLOB.meteors_catastrophic
 
-	var/ramp_up_final = clamp(round(meteorminutes/rampupdelta), 1, 10)
+	var/ramp_up_final = CLAMP(round(meteorminutes/rampupdelta), 1, 10)
 
 	spawn_meteors(ramp_up_final, wavetype)

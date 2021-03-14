@@ -194,7 +194,7 @@
 				reagents = new()
 			reagents.reagent_list.Add(A)
 			reagents.conditional_update()
-		else if(ismovable(A))
+		else if(ismovableatom(A))
 			var/atom/movable/M = A
 			if(isliving(M.loc))
 				var/mob/living/L = M.loc
@@ -441,8 +441,8 @@
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	while (do_after(user, 10, TRUE, src, FALSE, CALLBACK(STR, /datum/component/storage.proc/handle_mass_item_insertion, things, src_object, user, progress)))
 		stoplag(1)
-	progress.end_progress()
-	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents [STR.insert_preposition]to [src] as you can.</span>")
+	qdel(progress)
+	to_chat(user, "<span class='notice'>You dump as much of [src_object.parent]'s contents into [STR.insert_preposition]to [src] as you can.</span>")
 	STR.orient2hud(user)
 	src_object.orient2hud(user)
 	if(user.active_storage) //refresh the HUD to show the transfered contents
@@ -554,7 +554,7 @@
 /atom/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION("", "---------")
-	if(!ismovable(src))
+	if(!ismovableatom(src))
 		var/turf/curturf = get_turf(src)
 		if(curturf)
 			. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[curturf.x];Y=[curturf.y];Z=[curturf.z]'>Jump To</option>"
@@ -833,4 +833,4 @@ Proc for attack log creation, because really why not
 		return filters[filter_data.Find(name)]
 
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
-	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)
+	return FALSE

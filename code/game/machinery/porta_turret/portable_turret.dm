@@ -16,7 +16,7 @@
 	idle_power_usage = 50		//when inactive, this turret takes up constant 50 Equipment power
 	active_power_usage = 300	//when active, this turret takes up constant 300 Equipment power
 	req_access = list(ACCESS_SEC_DOORS)
-	power_channel = AREA_USAGE_EQUIP	//drains power from the EQUIPMENT channel
+	power_channel = EQUIP	//drains power from the EQUIPMENT channel
 
 	var/base_icon_state = "standard"
 	var/scan_range = 7
@@ -287,9 +287,8 @@
 	controllock = TRUE
 	on = FALSE //turns off the turret temporarily
 	update_icon()
-	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
-	addtimer(VARSET_CALLBACK(src, on, TRUE), 6 SECONDS)
-	//turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
+	sleep(60) //6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
+	on = TRUE //turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
 
 
 /obj/machinery/porta_turret/emp_act(severity)

@@ -1,40 +1,51 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using PaintDotNet;
+using PaintDotNet.Data;
+using System.IO;
 using System.Drawing;
+using System.Windows.Forms;
 
-// Support plugin so you don't need to rename DMI files to load them.
-// Made for the latest build of PDN as of 09/04/2020 (and that's not the American date format)
-// There is NO documentation for this shit. The Dark Art of PDN Plugins is quite well laid out in this repo, though:
-// https://github.com/0xC0000054/pdn-ddsfiletype-plus
-
-namespace PaintDotNet.DMIPlugin
+namespace PDN.DMIPlugin
 {
-	public sealed class DMIFileType : FileType
+	public sealed class DMIFileType : FileType, IFileTypeFactory
 	{
-		public DMIFileType() :
-			base("BYOND Graphic", new FileTypeOptions()
-			{
-				LoadExtensions = new string[] { ".dmi" },
-				SaveExtensions = new string[0]
-			})
-		{ }
+		public DMIFileType()
+			: base("DMI", FileTypeFlags.SupportsSaving | FileTypeFlags.SavesWithProgress | FileTypeFlags.SupportsLoading, new[] { ".dmi" }) { }
 
 		protected override Document OnLoad(Stream input)
 		{
-			// Get the PNG-*cough* DMI and load it
-			Bitmap b = new Bitmap(input, true);
-			return Document.FromImage(b);
+			try
+			{
+				Bitmap b = new Bitmap(input, true);
+
+				return Document.FromImage(b);
+			}
+			catch
+			{
+				MessageBox.Show("There was an error loading the image!", "DMI Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+				Bitmap b = new Bitmap(26, 10);
+				return Document.FromImage(Paint.NetDMIPlugin.Properties.Resources.robust);
+			}
 		}
 
-		// We do not do any save operations as DMIs are literally PNG files.
-		// PDN has us covered with some good options for PNG exporting already.
-	}
-
-	public sealed class DMIFileTypeFactory : IFileTypeFactory2
-	{
-		public FileType[] GetFileTypeInstances(IFileTypeHost host)
+		protected override void OnSave(Document input, Stream output, SaveConfigToken token, Surface surface, ProgressEventHandler callback)
 		{
-			// Tell PDN we exist and are a usable file type
-			return new FileType[] { new DMIFileType() };
+			// Do save operation...
+
+			RenderArgs ra = new RenderArgs(new Surface(input.Size));
+			input.Render(ra, true);
+
+			ra.Bitmap.Save(output, System.Drawing.Imaging.ImageFormat.Png);
+		}
+
+		FileType[] IFileTypeFactory.GetFileTypeInstances()
+		{
+			return new[] { new DMIFileType() };
 		}
 	}
 }

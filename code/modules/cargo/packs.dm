@@ -245,7 +245,7 @@
 
 /datum/supply_pack/emergency/specialops
 	name = "Special Ops Supplies"
-	desc = "(*!&@#TOO CHEAP FOR THAT NULL_ENTRY, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN STILL HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, A RECIPE BOOK TO MAKE EVEN MORE GRENADES, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
+	desc = "(*!&@#TOO CHEAP FOR THAT NULL_ENTRY, HUH OPERATIVE? WELL, THIS LITTLE ORDER CAN STILL HELP YOU OUT IN A PINCH. CONTAINS A BOX OF FIVE EMP GRENADES, THREE SMOKEBOMBS, AN INCENDIARY GRENADE, AND A \"SLEEPY PEN\" FULL OF NICE TOXINS!#@*$"
 	hidden = TRUE
 	cost = 2000
 	contains = list(/obj/item/storage/box/emps,
@@ -253,8 +253,7 @@
 					/obj/item/grenade/smokebomb,
 					/obj/item/grenade/smokebomb,
 					/obj/item/pen/sleepy,
-					/obj/item/grenade/chem_grenade/incendiary,
-					/obj/item/book/granter/crafting_recipe)
+					/obj/item/grenade/chem_grenade/incendiary)
 	crate_name = "emergency crate"
 	crate_type = /obj/structure/closet/crate/internals
 
@@ -1431,15 +1430,6 @@
 					/obj/item/stack/packageWrap)
 	crate_name = "cargo supplies crate"
 
-/datum/supply_pack/service/inkcartridges
-	name = "Spacestar-brand Ink Crate"
-	desc = "Make your curator (and Spacestar) happy by ordering them some more ink for books!"
-	cost = 3000
-	contains = list(/obj/item/inkcartridge,
-					/obj/item/inkcartridge
-					)
-	crate_name = "Spacestar-brand ink crate"
-
 /datum/supply_pack/service/noslipfloor
 	name = "High-traction Floor Tiles"
 	desc = "Make slipping a thing of the past with thirty industrial-grade anti-slip floortiles!"
@@ -2428,7 +2418,7 @@
 /datum/supply_pack/misc/religious_supplies
 	name = "Religious Supplies Crate"
 	desc = "Keep your local chaplain happy and well-supplied, lest they call down judgement upon your cargo bay. Contains two bottles of holywater, bibles, chaplain robes, and burial garmets."
-	cost = 4000	// it costs so much because the Space Church is ran by Space Clowns
+	cost = 4000	// it costs so much because the Space Church is ran by Space Jews
 	contains = list(/obj/item/reagent_containers/food/drinks/bottle/holywater,
 					/obj/item/reagent_containers/food/drinks/bottle/holywater,
 					/obj/item/storage/book/bible/booze,

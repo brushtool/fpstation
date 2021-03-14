@@ -26,7 +26,6 @@
 	var/nextstate = null
 	var/boltslocked = TRUE
 	var/list/affecting_areas
-	safety_mode = TRUE
 
 /obj/machinery/door/firedoor/Initialize()
 	. = ..()

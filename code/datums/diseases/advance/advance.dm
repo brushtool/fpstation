@@ -204,10 +204,10 @@
 		else
 			visibility_flags &= ~HIDDEN_SCANNER
 
-		SetSpread(clamp(2 ** (properties["transmittable"] - symptoms.len), DISEASE_SPREAD_BLOOD, DISEASE_SPREAD_AIRBORNE))
+		SetSpread(CLAMP(2 ** (properties["transmittable"] - symptoms.len), DISEASE_SPREAD_BLOOD, DISEASE_SPREAD_AIRBORNE))
 
 		permeability_mod = max(CEILING(0.4 * properties["transmittable"], 1), 1)
-		cure_chance = 15 - clamp(properties["resistance"], -5, 5) // can be between 10 and 20
+		cure_chance = 15 - CLAMP(properties["resistance"], -5, 5) // can be between 10 and 20
 		stage_prob = max(properties["stage_rate"], 2)
 		SetSeverity(properties["severity"])
 		GenerateCure(properties)
@@ -262,7 +262,7 @@
 // Will generate a random cure, the less resistance the symptoms have, the harder the cure.
 /datum/disease/advance/proc/GenerateCure()
 	if(properties && properties.len)
-		var/res = clamp(properties["resistance"] - (symptoms.len / 2), 1, advance_cures.len)
+		var/res = CLAMP(properties["resistance"] - (symptoms.len / 2), 1, advance_cures.len)
 		cures = list(advance_cures[res])
 
 		// Get the cure name from the cure_id
@@ -419,7 +419,7 @@
 
 	if(D.symptoms.len > 0)
 
-		var/new_name = stripped_input(user, "Name your new disease.", "New Name", max_length = MAX_CHARTER_LEN)
+		var/new_name = stripped_input(user, "Name your new disease.", "New Name")
 		if(!new_name)
 			return
 		D.AssignName(new_name)

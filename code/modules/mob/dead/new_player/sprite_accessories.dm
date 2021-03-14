@@ -356,7 +356,7 @@
 	name = "Flat Top (Big)"
 	icon_state = "hair_bigflattop"
 
-/datum/sprite_accessory/hair/fun
+/datum/sprite_accessory/hair/fag
 	name = "Flow Hair"
 	icon_state = "hair_f"
 

@@ -1,11 +1,11 @@
-## Spacepunch
+## FPStation
 
 [![Build Status](https://travis-ci.org/brushtool/fpstation.svg?branch=master)](https://travis-ci.org/brushtool/fpstation)[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/brushtool/fpstation.svg)](http://isitmaintained.com/project/brushtool/fpstation "Average time to resolve an issue")[![Percentage of issues still open](http://isitmaintained.com/badge/open/brushtool/fpstation.svg)](http://isitmaintained.com/project/brushtool/fpstation "Percentage of issues still open")
 [![forthebadge](https://forthebadge.com/images/badges/compatibility-club-penguin.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/contains-technical-debt.svg)](https://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
 
-## ABOUT (Spacepunch)
+## ABOUT (HippieStation)
 
-This is the Github page for the Spacepunch codebase, used on the Space Station 13 server. This codebase is built off the work of many different servers, primarily that of /tg/station 13.
+This is the Github page for the HippieStation codebase, used on the Space Station 13 server. This codebase is built off the work of many different servers, primarily that of /tg/station 13.
 Because of this, the repository inherits /tg/station's licensing, among other things.
 For a full guide on how to set up your own Space Station 13 server, please see the [/tg/station README.md](https://github.com/tgstation/tgstation/blob/master/README.md).
 If you would like to contribute to this codebase, first take a look at the [CONTRIBUTING.md](.github/CONTRIBUTING.md).
@@ -94,7 +94,7 @@ recompile the game.  Once you start the server up again, you should be running
 the new version.
 
 ## MAPS
-Spacepunch currently comes equipped with five maps.
+Hippie Station currently comes equipped with five maps.
 * [Hippie BoxStation (default)](https://tgstation13.org/wiki/Boxstation)
 * [BoxStation (default)](https://tgstation13.org/wiki/Boxstation)
 * [MetaStation](https://tgstation13.org/wiki/MetaStation)

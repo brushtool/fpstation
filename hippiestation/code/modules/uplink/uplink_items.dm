@@ -74,9 +74,9 @@
 
 /* Glock */
 /datum/uplink_item/dangerous/g17
-	name = "Glock 17 Handgun with three magazines"
-	desc = "A simple yet popular handgun chambered in 9mm. Made out of strong but lightweight polymer. The standard magazine can hold up to 14 9mm cartridges. Compatible with a universal suppressor. This pack comes with three spare magazines."
-	item = /obj/item/storage/box/syndie_kit/glock17
+	name = "Glock 17 Handgun"
+	desc = "A simple yet popular handgun chambered in 9mm. Made out of strong but lightweight polymer. The standard magazine can hold up to 14 9mm cartridges. Compatible with a universal suppressor."
+	item = /obj/item/gun/ballistic/automatic/pistol/g17
 	cost = 10
 	surplus = 15
 
@@ -121,7 +121,7 @@
 	name = "Syndicate Firesuit"
 	desc = "A less heavy, armored version of the common firesuit developed by a now-defunct, \
 	Syndicate-affiliated collective with a penchant for arson. It offers complete fireproofing, \
-	the added bonus of not slowing the wearer while equipped, and it fits into any backpack. \
+	spaceproofing, the added bonus of not slowing the wearer while equipped and it fits into any backpack. \
 	Comes in conspicuous red/orange colors. Helmet included."
 	cost = 4
 	item = /obj/item/storage/box/syndie_kit/firesuit/
@@ -138,13 +138,13 @@
 	item = /obj/item/twohanded/fireaxe/fireyaxe
 	restricted_roles = list("Atmospheric Technician")
 
-/datum/uplink_item/role_restricted/stupidhorn
+/datum/uplink_item/role_restricted/retardhorn
 	name = "Extra Annoying Bike Horn."
 	desc = "This bike horn has been carefully tuned by the clown federation to subtly affect the brains of those who\
 	 hear it using advanced sonic techniques. To the untrained eye, a golden bike horn but each honk will cause small\
 	  amounts of brain damage, most targets will be reduced to a gibbering wreck before they catch on."
 	cost = 5
-	item = /obj/item/bikehorn/golden/stupidhorn
+	item = /obj/item/bikehorn/golden/retardhorn
 	restricted_roles = list("Clown")
 
 /datum/uplink_item/ammo/pistol
@@ -395,7 +395,7 @@
 	item = /obj/item/storage/box/syndie_kit/nanosuit
 	cost = 20
 	surplus = 10
-	cant_discount = TRUE
+	cant_discount = TRUE	
 	exclude_modes = list(/datum/game_mode/nuclear, /datum/game_mode/infiltration)
 
 /datum/uplink_item/dangerous/synth
