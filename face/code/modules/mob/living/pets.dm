@@ -21,7 +21,7 @@
 	icon_state = "raccoon"
 	icon_living = "raccoon"
 	icon_dead = "raccoon-dead"
-	speak = list("chitter", "Chirp!", "SQUEAL!", "AAAAAAAAAAAA")
+	speak = list("chitter", "hiss!", "SQUEAL!", "AAAAAAAAAAAA")
 	speak_emote = list("snorts", "growls")
 	emote_hear = list("purrs!", "screams!", "snorts.","screech.")
 	emote_see = list("shakes its head.", "chases its tail.","shivers.")
