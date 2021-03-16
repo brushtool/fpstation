@@ -1,0 +1,929 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aa" = (
+/turf/template_noop,
+/area/template_noop)
+"ac" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ad" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"ae" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/shuttle/escape)
+"af" = (
+/obj/structure/table,
+/obj/machinery/recharger,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/pizzabox,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ag" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ah" = (
+/obj/machinery/computer/emergency_shuttle,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ai" = (
+/obj/structure/table,
+/obj/item/crowbar,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/pizzabox,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"al" = (
+/obj/machinery/computer/atmos_alert{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"am" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ao" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/ammo_casing/c45,
+/obj/item/ammo_casing/c45,
+/obj/item/circuitboard/computer/atmos_alert,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ap" = (
+/obj/structure/frame/computer,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"aq" = (
+/obj/machinery/computer/crew{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ar" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"as" = (
+/obj/item/radio/intercom{
+	name = "Station Intercom (General)";
+	pixel_y = -29
+	},
+/obj/effect/mob_spawn/human/corpse/assistant,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"at" = (
+/obj/machinery/button/flasher{
+	id = "cockpit_flasher";
+	pixel_x = 6;
+	pixel_y = -24
+	},
+/obj/machinery/light,
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/item/ammo_casing/c45,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ay" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Emergency Shuttle Cockpit";
+	req_access_txt = "19"
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"az" = (
+/obj/machinery/status_display/evac,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"aA" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"aB" = (
+/obj/structure/barricade/security,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"aC" = (
+/obj/effect/mob_spawn/human/corpse/assistant,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aD" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aE" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aF" = (
+/obj/machinery/flasher{
+	id = "shuttle_flasher";
+	pixel_x = -24;
+	pixel_y = 6
+	},
+/obj/machinery/button/flasher{
+	id = "shuttle_flasher";
+	pixel_x = -24;
+	pixel_y = -6
+	},
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"aG" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"aH" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Emergency Shuttle Brig";
+	req_access_txt = "2"
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"aI" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock";
+	req_access_txt = "2"
+	},
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"aJ" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"aM" = (
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"aP" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/docking_port/mobile/emergency{
+	name = "Box emergency shuttle"
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aQ" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -5;
+	pixel_y = 30
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"aR" = (
+/obj/item/pet_carrier,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"aT" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"aV" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aW" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -30
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"aX" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Cargo"
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"aZ" = (
+/obj/structure/door_assembly/door_assembly_med,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"bb" = (
+/obj/effect/decal/cleanable/generic,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bc" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bd" = (
+/mob/living/simple_animal/bot/medbot,
+/obj/item/shard,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"be" = (
+/obj/structure/table,
+/obj/item/crowbar,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/item/melee/baton/cattleprod,
+/obj/item/storage/box/beakers,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"bf" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bg" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bi" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"bj" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/escape)
+"bk" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"bl" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bm" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"bn" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"bo" = (
+/obj/machinery/light/small,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bp" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/vomit,
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bq" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"br" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"bs" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/machinery/chem_dispenser/fullupgrade,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"cQ" = (
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"eo" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/item/ammo_box/magazine/m45,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"et" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"fe" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"fO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/shreds,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ga" = (
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"gg" = (
+/obj/structure/window/reinforced/spawner/west,
+/mob/living/simple_animal/pet/dog/corgi/raccoon,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"gY" = (
+/obj/item/wirerod,
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/glass,
+/obj/item/clothing/under/rank/nursesuit,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"hm" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"jf" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"jP" = (
+/obj/structure/window/reinforced/spawner,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"lg" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Emergency Shuttle Airlock"
+	},
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"lu" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"lT" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"lY" = (
+/mob/living/simple_animal/pet/dog/corgi/raccoon,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"ma" = (
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"mR" = (
+/obj/effect/decal/cleanable/blood/hitsplatter,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"nf" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/closet,
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"oP" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"pE" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"pJ" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/item/banner/security,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"sp" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"ug" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/item/pet_carrier,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"vg" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"vq" = (
+/obj/item/bot_assembly/medbot,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"vu" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"vC" = (
+/mob/living/simple_animal/mouse/gray,
+/mob/living/simple_animal/pet/dog/corgi/raccoon,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"vD" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/armory_contraband/metastation,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"wD" = (
+/obj/structure/window/reinforced/fulltile,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"xz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"ye" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/plastitanium/red/brig,
+/area/shuttle/escape)
+"Cl" = (
+/obj/item/pet_carrier,
+/obj/item/pet_carrier,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"Dj" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/item/banner/medical,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Dt" = (
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"EO" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"ET" = (
+/obj/effect/decal/fakelattice,
+/turf/template_noop,
+/area/template_noop)
+"Gl" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/item/ammo_casing/c45,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"GA" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"GT" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"HV" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Ie" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"Jk" = (
+/obj/structure/barricade/security,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"KP" = (
+/obj/effect/gibspawner,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Le" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"LL" = (
+/obj/effect/decal/cleanable/generic,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"Ns" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/item/ammo_casing/c45,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"Qe" = (
+/obj/structure/grille/broken,
+/obj/item/shard,
+/obj/item/stack/rods,
+/obj/item/stack/rods,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"RO" = (
+/obj/structure/window/reinforced/spawner,
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/mineral/titanium/blue,
+/area/shuttle/escape)
+"SC" = (
+/obj/item/banner/command,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"SF" = (
+/obj/item/gun/ballistic/automatic/pistol/m1911/no_mag,
+/obj/item/ammo_casing/c45,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"SL" = (
+/obj/effect/decal/cleanable/robot_debris/down,
+/turf/open/floor/plasteel,
+/area/shuttle/escape)
+"Tz" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"TB" = (
+/obj/item/shard,
+/obj/effect/decal/cleanable/glass,
+/obj/item/clothing/head/nursehat,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"Uq" = (
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Us" = (
+/mob/living/simple_animal/mouse/gray,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"UY" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/structure/barricade/wooden,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"UZ" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"Vu" = (
+/obj/item/shard,
+/mob/living/simple_animal/pet/dog/corgi/raccoon,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+"VI" = (
+/obj/structure/girder,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"VU" = (
+/obj/item/banner/cargo,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"WR" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/mineral/titanium,
+/area/shuttle/escape)
+"XC" = (
+/obj/structure/closet/emcloset,
+/obj/item/storage/firstaid/advanced,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/escape)
+"Yc" = (
+/obj/structure/bed/roller,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Zv" = (
+/obj/item/stack/cable_coil,
+/mob/living/simple_animal/mouse/gray,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/grass,
+/area/shuttle/escape)
+
+(1,1,1) = {"
+aa
+aa
+aa
+aa
+ad
+ad
+ad
+aI
+ad
+aP
+UZ
+UY
+HV
+HV
+mR
+lg
+LL
+aV
+LL
+ad
+ad
+aa
+"}
+(2,1,1) = {"
+aa
+ad
+ad
+ad
+ad
+aA
+aF
+aG
+ad
+bn
+bm
+jf
+vg
+et
+bl
+bo
+VI
+bb
+bq
+bf
+ad
+ad
+"}
+(3,1,1) = {"
+ad
+ae
+al
+aq
+ad
+ye
+aG
+aJ
+ad
+aQ
+GA
+WR
+Tz
+Le
+fO
+aW
+VU
+lu
+SL
+vD
+bi
+bk
+"}
+(4,1,1) = {"
+ac
+af
+am
+ar
+ad
+sp
+aG
+aJ
+VI
+GA
+aT
+xz
+xz
+pE
+Le
+Le
+aX
+cQ
+Ie
+bg
+bi
+bk
+"}
+(5,1,1) = {"
+ac
+ag
+aC
+as
+ad
+pJ
+aH
+pJ
+bj
+GA
+aT
+aT
+GT
+bm
+oP
+Le
+VU
+bc
+br
+bg
+bi
+bk
+"}
+(6,1,1) = {"
+ac
+ah
+KP
+at
+SC
+aB
+vu
+bm
+bm
+EO
+EO
+TB
+gY
+EO
+EO
+bp
+az
+ad
+ad
+ad
+bi
+bk
+"}
+(7,1,1) = {"
+ac
+Gl
+SF
+eo
+ay
+Jk
+vu
+bm
+RO
+ug
+gg
+Vu
+Zv
+gg
+gg
+hm
+Dj
+XC
+bs
+Yc
+bi
+bk
+"}
+(8,1,1) = {"
+ac
+ai
+ao
+Ns
+SC
+aB
+Uq
+aM
+RO
+aR
+vC
+Dt
+Dt
+fe
+lY
+hm
+aZ
+ga
+lT
+ma
+bi
+bk
+"}
+(9,1,1) = {"
+ad
+ae
+ap
+aM
+ad
+aD
+Uq
+bl
+jP
+Cl
+lY
+Us
+Us
+Dt
+lY
+hm
+Dj
+ga
+ga
+lT
+bi
+bk
+"}
+(10,1,1) = {"
+aa
+ad
+ad
+ad
+ad
+aE
+bl
+bl
+nf
+aR
+Us
+Us
+Us
+Us
+Us
+hm
+Qe
+bd
+be
+vq
+ad
+ad
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+aa
+ad
+wD
+ad
+wD
+ad
+ad
+mR
+HV
+HV
+HV
+ad
+ad
+ad
+ac
+ad
+ac
+ad
+ET
+"}
