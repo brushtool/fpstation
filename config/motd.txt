@@ -1,5 +1,0 @@
-<!-- Most valid html will work in here, excluding images. -->
-
-<h1>Welcome to Spacepunch Station 13!</h1>
-
-<i>We're back in buisness... again!</i>

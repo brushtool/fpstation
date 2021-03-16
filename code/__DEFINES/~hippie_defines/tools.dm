@@ -1,1 +1,0 @@
-#define TOOL_TRAY		"t_ray"
