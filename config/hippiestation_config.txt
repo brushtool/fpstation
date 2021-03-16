@@ -19,7 +19,7 @@ TOKEN_CONSUMER http://127.0.0.1:9000/byondLinker.php
 #TTS_API http://www.example.com/index.html?text=
 
 ## Enables the text-to-speech subsystem, allowing humans to use it
-ENABLE_TTS
+#ENABLE_TTS
 
 # The command to run for TTS generation.
 # %I is input textfile,  %O is output wavefile, %V is voice name.
