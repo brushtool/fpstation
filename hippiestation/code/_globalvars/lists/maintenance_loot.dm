@@ -112,6 +112,12 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	/obj/item/clothing/mask/gas/face/custom/hockey = 1,
 	/obj/item/gun/energy/laser/retro/face/custom/lasgun = 1, // It's a really, really shit gun. Why not.
 	/obj/item/clothing/head/face/custom/vg/russofurhat = 1,
+	/obj/item/clothing/mask/gas/face/custom/father = 1,
+	/obj/item/clothing/shoes/face/custom/nike = 1,
+	/obj/item/clothing/suit/face/custom/kyle = 1,
+	/obj/item/clothing/under/face/custom/vg/sneaksuit = 1,
+	/mob/living/simple_animal/pet/dog/corgi/raccoon = 4, // YOU THOUGHT THE MICE WERE BAD? WELL, they are. These don't do anything right now except vibe.
+	/obj/item/weapon/cane/custom/kaz = 1,
 	/obj/item/clothing/suit/armor/face/defender = 1, // might not be the best idea, tbh. Let's see how it works out
 	"" = 3
 	))

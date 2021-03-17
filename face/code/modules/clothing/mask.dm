@@ -35,6 +35,6 @@
 
 /obj/item/clothing/mask/gas/face/custom/father
 	name = "Fathermask"
-	desc = "There's a tag left on it. It reads, 'WOT R U FAGIT' "
+	desc = "There's a tag left on it. It reads, 'WOT R U FRENDGIT' "
 	icon_state = "fathermask"
 	item_state = "fathermask"
