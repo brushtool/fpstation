@@ -79,6 +79,10 @@ GLOBAL_LIST_INIT(ai_core_display_screens, list(
 	"Too Deep",
 	"Triumvirate",
 	"Triumvirate-M",
+	"Kitty",
+	"Sus",
+	"Marionette",
+	"Facepunch",
 	"Weird"))
 
 /proc/resolve_ai_icon(input)
