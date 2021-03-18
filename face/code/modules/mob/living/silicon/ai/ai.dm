@@ -42,5 +42,6 @@
 	"Weird",
 	"Kitty",
 	"Sus",
+	"Company",
 	"Marionette",
 	"Facepunch")

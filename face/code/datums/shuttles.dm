@@ -16,5 +16,11 @@
 	suffix = "mimics"
 	name = "Pirate Cargo Shuttle"
 	credit_cost = 7500
-	description = "A cargo craft within your sector, known to be a salvage ship ran by a small pirate crew. Wanted dead for the pillaging of several civilian salvage ships within the past week. For a modest fee, we will \"guide\" them to the station so you may reclaim these goods for yourselves, in lieu of a standard escape shuttle. Do note, we expect seating to be minimal, and the stolen cargo is rumored to be of questionable origin."
+	description = "A cargo craft within your sector, known to be a salvage ship ran by a small pirate crew. Wanted dead for the pillaging of several civilian salvage ships within the past week. For a modest fee, we will \"guide\" them to the station so you may reclaim these goods for yourselves, in lieu of a standard escape shuttle. Do note, we expect seating to be minimal, and the stolen cargo is rumored to be of questionable origin. Expect chaos. The Bloody signal must be elimated for this shuttle to be unlocked."
 	admin_notes = "A small shuttle with a few pirates onboard. Lockers have random loot which can be anything from mimics, to clown hulks, or high-power weaponry. Probably not balanced."
+
+
+/datum/map_template/shuttle/emergency/mimics/prerequisites_met()
+	if("bubblegum" in SSshuttle.shuttle_purchase_requirements_met)
+		return TRUE
+	return FALSE
