@@ -1,0 +1,614 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/turf/closed/wall/mineral/titanium{
+	color = #0277bd 
+	},
+/area/shuttle/escape)
+"am" = (
+/obj/machinery/computer/security/hos,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"an" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aq" = (
+/obj/machinery/computer/crew{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"ar" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"as" = (
+/obj/machinery/computer/emergency_shuttle{
+	dir = 8
+	},
+/obj/machinery/light,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"ay" = (
+/obj/machinery/vending/wallmed,
+/turf/closed/wall/mineral/titanium{
+	color = #0277bd 
+	},
+/area/shuttle/escape)
+"az" = (
+/obj/machinery/status_display/evac,
+/turf/closed/wall/mineral/titanium{
+	color = #0277bd 
+	},
+/area/shuttle/escape)
+"aA" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/delivery,
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/hostile/retaliate/goat,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aB" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/food/snacks/donkpocket/warm,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aC" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aD" = (
+/obj/structure/closet/emcloset,
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/obj/item/storage/firstaid/brute,
+/obj/item/tank/internals/emergency_oxygen/double/empty,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aE" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/machinery/camera/xray,
+/obj/effect/turf_decal/delivery,
+/obj/item/storage/firstaid/fire,
+/obj/item/tank/internals/emergency_oxygen/double/empty,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aF" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/structure/closet/crate/medical,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/delivery,
+/mob/living/simple_animal/bot/medbot,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/brute,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aQ" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"aV" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"bb" = (
+/obj/structure/closet,
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bd" = (
+/obj/structure/closet/cardboard,
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bf" = (
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/structure/shuttle/engine/heater,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"bj" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bk" = (
+/turf/template_noop,
+/area/template_noop)
+"bl" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bm" = (
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bo" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bp" = (
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"bs" = (
+/turf/closed/wall/mineral/titanium{
+	color = blue
+	},
+/area/shuttle/escape)
+"bz" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating/airless,
+/area/shuttle/escape)
+"bG" = (
+/obj/effect/decal/cleanable/robot_debris/limb,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"ga" = (
+/obj/effect/turf_decal,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"gz" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/seven,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"iP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/robot_debris/old,
+/obj/machinery/light,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"jD" = (
+/obj/machinery/door/airlock/command/glass,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"jM" = (
+/obj/effect/decal/cleanable/robot_debris/gib,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"kH" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"qV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"rT" = (
+/obj/structure/closet/cardboard,
+/obj/effect/turf_decal,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"sH" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"wa" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"wF" = (
+/obj/structure/extinguisher_cabinet,
+/turf/closed/wall/mineral/titanium{
+	color = #0277bd 
+	},
+/area/shuttle/escape)
+"xT" = (
+/obj/machinery/light/small{
+	brightness = 3;
+	dir = 8
+	},
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"yh" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/docking_port/mobile/emergency,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"yv" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/oil/streak,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"Ad" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/space/basic,
+/area/shuttle/escape)
+"DU" = (
+/obj/structure/closet,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/turf_decal,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"GW" = (
+/obj/structure/closet/crate/secure/loot,
+/obj/effect/turf_decal/delivery,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"IE" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"IY" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"KB" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/spawner/lootdrop/whiteship_cere_ripley,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"KD" = (
+/obj/item/stack/sheet/cardboard/fifty,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"QI" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"SY" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"UI" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"Ww" = (
+/obj/structure/closet,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/effect/turf_decal,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"Xk" = (
+/obj/machinery/light,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"XC" = (
+/obj/machinery/autolathe,
+/obj/effect/turf_decal,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"ZL" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+"ZQ" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/plasteel/facepunch/dark,
+/area/shuttle/escape)
+
+(1,1,1) = {"
+bk
+bk
+bk
+bk
+ad
+ad
+ad
+ad
+ad
+yh
+ad
+ad
+ad
+ad
+ad
+aV
+ad
+ad
+ad
+bf
+bz
+bk
+"}
+(2,1,1) = {"
+bk
+bk
+aC
+aC
+ad
+aA
+aF
+QI
+QI
+bo
+bo
+GW
+GW
+ad
+xT
+bo
+bo
+bb
+ad
+bf
+bz
+bk
+"}
+(3,1,1) = {"
+bk
+aC
+aC
+aq
+ad
+wa
+bj
+aQ
+SY
+aQ
+bp
+ZL
+bp
+ad
+bp
+bp
+bp
+DU
+ad
+bk
+bk
+bk
+"}
+(4,1,1) = {"
+bk
+aC
+am
+ar
+jD
+wa
+bj
+bj
+aQ
+aQ
+bp
+bp
+bp
+ad
+bp
+bp
+bp
+Ww
+ad
+bk
+bk
+bk
+"}
+(5,1,1) = {"
+bk
+aC
+aC
+as
+ad
+wa
+bj
+bj
+bj
+aQ
+bp
+bp
+Xk
+ad
+kH
+bp
+bp
+ga
+ad
+bk
+bk
+bk
+"}
+(6,1,1) = {"
+bk
+bk
+aC
+aC
+wF
+aB
+bj
+bj
+bm
+yv
+KD
+bp
+bp
+IY
+bp
+bp
+ad
+ad
+ad
+bk
+bk
+bk
+"}
+(7,1,1) = {"
+bk
+bk
+bk
+bk
+ay
+qV
+bj
+jM
+sH
+iP
+ad
+kH
+bp
+bp
+bp
+bp
+IY
+XC
+ad
+bk
+bk
+bk
+"}
+(8,1,1) = {"
+bk
+bk
+bk
+bk
+az
+an
+bj
+bj
+bj
+bG
+ad
+UI
+bp
+bp
+bp
+bp
+bp
+ga
+ad
+bk
+bk
+bk
+"}
+(9,1,1) = {"
+bk
+bk
+bk
+bk
+ad
+aD
+bp
+bp
+bp
+bp
+ad
+UI
+bp
+bp
+bp
+bp
+bp
+rT
+ad
+bk
+bk
+bk
+"}
+(10,1,1) = {"
+bk
+bk
+bk
+bk
+ad
+aE
+bl
+bo
+bo
+bo
+ad
+IE
+KB
+gz
+ZQ
+ZQ
+bo
+bd
+ad
+bf
+bz
+bk
+"}
+(11,1,1) = {"
+bk
+bk
+bk
+bk
+ad
+ad
+ad
+Ad
+Ad
+Ad
+ad
+ad
+ad
+bs
+ad
+ad
+ad
+ad
+ad
+bf
+bz
+bk
+"}
