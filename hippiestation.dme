@@ -2954,6 +2954,7 @@
 #include "face\code\modules\clothing\tie.dm"
 #include "face\code\modules\clothing\under.dm"
 #include "face\code\modules\hydroponics\grown\towercap.dm"
+#include "face\code\modules\mob\living\hostile.dm"
 #include "face\code\modules\mob\living\pets.dm"
 #include "face\code\modules\mob\living\say.dm"
 #include "face\code\modules\mob\living\silicon\ai\ai.dm"

@@ -46,7 +46,6 @@
 				/obj/item/grenade/syndieminibomb/concussion/frag = 10,
 				/obj/item/minigunpack/shotgun = 5)
 
-
 /obj/effect/spawner/lootdrop/snowdin/weaponryheavy
 	name = "weaponry heavy"
 	lootcount = 1
@@ -69,3 +68,55 @@
 				/obj/item/reagent_containers/hypospray/combat/nanites = 10,
 				/obj/vehicle/ridden/lawnmower/emagged = 10,
 				/obj/item/grenade/syndieminibomb/concussion/frag = 5)
+
+//Mimic Shuttle Mob Spawners
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/deadly_mobspawner
+	name = "deadly mob spawner"
+	lootcount = 1
+	loot = list(/mob/living/simple_animal/hostile/mimic/crate/weak = 80,
+				/mob/living/simple_animal/hostile/retaliate/clown/clownhulk = 5,
+				/mob/living/simple_animal/hostile/gorilla = 5,
+				/mob/living/simple_animal/hostile/retaliate/clown/mutant = 5,
+				/mob/living/simple_animal/hostile/pirate/melee = 5)
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/hostile_mobspawner
+	name = "hostile mob spawner"
+	lootcount = 2
+	loot = list(/mob/living/simple_animal/hostile/mimic/crate/weak = 80,
+				/mob/living/simple_animal/crab/evil = 10,
+				/mob/living/simple_animal/hostile/space_funeral/bloodhound = 5,
+				/mob/living/simple_animal/hostile/space_funeral/leghorse = 5,
+				/mob/living/simple_animal/hostile/space_funeral/philip = 5)
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/raccoons
+	name = "raccoon spawner"
+	lootcount = 3
+	loot = list(/mob/living/simple_animal/pet/dog/corgi/raccoon = 100)
+
+//Mimic Shuttle Loot Spawners
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/lowtier
+	name = "mimic low tier"
+	lootcount = 1
+	loot = list(/obj/effect/spawner/lootdrop/mimic_shuttle/hostile_mobspawner = 20,
+				/obj/effect/spawner/lootdrop/mimic_shuttle/deadly_mobspawner = 10,
+				/obj/effect/spawner/lootdrop/maintenance/three = 15,
+				/obj/effect/spawner/lootdrop/snowdin/weaponrylite = 25,
+				/obj/effect/spawner/lootdrop/mimic_shuttle/raccoons = 30)
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/midtier
+	name = "mimic mid tier"
+	lootcount = 1
+	loot = list(/obj/effect/spawner/lootdrop/mimic_shuttle/deadly_mobspawner = 25,
+				/obj/effect/spawner/lootdrop/maintenance/five = 25,
+				/obj/effect/spawner/lootdrop/snowdin/weaponrymid = 25,
+				/obj/effect/spawner/lootdrop/mimic_shuttle/raccoons = 25)
+
+/obj/effect/spawner/lootdrop/mimic_shuttle/hightier
+	name = "mimic high tier"
+	lootcount = 2
+	loot = list(/obj/effect/spawner/lootdrop/mimic_shuttle/deadly_mobspawner = 40,
+				/obj/effect/spawner/lootdrop/maintenance/eight = 20,
+				/obj/effect/spawner/lootdrop/snowdin/weaponryheavy = 30,
+				/obj/effect/spawner/lootdrop/mimic_shuttle/raccoons = 15)
