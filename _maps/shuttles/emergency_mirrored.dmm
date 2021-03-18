@@ -1,0 +1,90 @@
+"aa" = (/turf/template_noop,/area/template_noop)
+"ab" = (/obj/structure/lattice,/turf/open/space/basic,/area/template_noop)
+"ac" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/shuttle/escape)
+"ad" = (/turf/closed/wall,/area/shuttle/escape)
+"ae" = (/obj/structure/table,/obj/machinery/recharger{pixel_y = 4},/obj/machinery/requests_console{department = "Crew Quarters"; pixel_y = 30},/obj/machinery/airalarm{dir = 4; pixel_x = -22},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"af" = (/obj/structure/table,/obj/item/paper_bin{pixel_x = 1; pixel_y = 9},/obj/item/pen,/obj/structure/reagent_dispensers/peppertank{pixel_y = 30},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ag" = (/obj/machinery/light{dir = 1},/obj/machinery/computer/security/telescreen{desc = "Used for watching output from station security cameras."; name = "Security Camera Monitor"; network = list("ss13"); pixel_y = 30},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ah" = (/obj/structure/chair,/obj/machinery/newscaster/security_unit{pixel_x = 0; pixel_y = 32},/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ai" = (/obj/structure/chair,/obj/effect/turf_decal/tile/red{dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aj" = (/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel,/area/shuttle/escape)
+"ak" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/structure/chair,/turf/open/floor/plasteel,/area/shuttle/escape)
+"al" = (/obj/structure/chair,/turf/open/floor/plasteel,/area/shuttle/escape)
+"am" = (/obj/structure/cable,/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/shuttle/escape)
+"an" = (/obj/effect/turf_decal/tile/red{dir = 1},/obj/machinery/computer/emergency_shuttle{icon_state = "computer"; dir = 4},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ao" = (/obj/structure/chair/office{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ap" = (/turf/open/floor/plasteel,/area/shuttle/escape)
+"aq" = (/obj/machinery/camera{c_tag = "Hydroponics South"; dir = 8},/obj/machinery/light{dir = 4},/obj/effect/turf_decal/tile/red,/turf/open/floor/plasteel,/area/shuttle/escape)
+"ar" = (/obj/machinery/door/airlock/external{name = "Security Escape Airlock"; req_access_txt = "2"},/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/obj/docking_port/mobile/emergency{dir = 4; dwidth = 5; height = 17; name = "escape emergency shuttle"; width = 15},/turf/open/floor/plasteel,/area/shuttle/escape)
+"as" = (/obj/machinery/light/small{dir = 1},/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel,/area/shuttle/escape)
+"at" = (/obj/machinery/door/airlock/external{name = "Security Escape Airlock"; req_access_txt = "2"},/obj/structure/fans/tiny,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"au" = (/obj/effect/turf_decal/stripes/line{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"av" = (/obj/structure/table,/obj/item/book/manual/wiki/security_space_law,/obj/item/radio/off,/obj/item/restraints/handcuffs,/obj/effect/turf_decal/tile/red,/turf/open/floor/plasteel,/area/shuttle/escape)
+"aw" = (/obj/effect/turf_decal/tile/red,/turf/open/floor/plasteel,/area/shuttle/escape)
+"ax" = (/obj/item/crowbar,/obj/structure/table,/obj/effect/turf_decal/tile/red,/obj/item/storage/firstaid/o2,/turf/open/floor/plasteel,/area/shuttle/escape)
+"ay" = (/obj/structure/sign/warning/docking,/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/shuttle/escape)
+"az" = (/obj/machinery/light{dir = 4},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aA" = (/obj/structure/cable,/obj/machinery/door/firedoor,/obj/machinery/door/airlock/security/glass{name = "Holding Area"; req_access_txt = "2"},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aB" = (/obj/machinery/door/firedoor,/obj/structure/table/reinforced,/obj/machinery/door/window/southleft{name = "Outer Window"},/obj/machinery/door/window/brigdoor/northleft{name = "Security Desk"; req_access_txt = "1"},/obj/item/storage/firstaid/brute,/obj/item/storage/firstaid/fire{pixel_x = 8},/turf/open/floor/plating,/area/shuttle/escape)
+"aC" = (/obj/machinery/door/airlock/external{name = "Escape Airlock"},/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aD" = (/obj/machinery/door/airlock/external{name = "Escape Airlock"},/obj/structure/fans/tiny,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aE" = (/obj/machinery/vending/cola/random,/obj/machinery/status_display/evac{layer = 4; pixel_y = 32},/turf/open/floor/plasteel/dark,/area/shuttle/escape)
+"aF" = (/obj/effect/turf_decal/delivery,/obj/structure/sign/warning/vacuum/external{pixel_x = -32},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aG" = (/obj/machinery/computer/arcade,/turf/open/floor/plasteel/dark,/area/shuttle/escape)
+"aH" = (/obj/structure/window/reinforced{dir = 1; layer = 2.9},/obj/structure/window/reinforced{dir = 8},/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/grass,/area/shuttle/escape)
+"aI" = (/obj/structure/window/reinforced{dir = 1; layer = 2.9},/obj/structure/flora/ausbushes/ywflowers,/turf/open/floor/grass,/area/shuttle/escape)
+"aJ" = (/obj/machinery/door/window{dir = 1},/turf/open/floor/grass,/area/shuttle/escape)
+"aK" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced{dir = 1; layer = 2.9},/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/grass,/area/shuttle/escape)
+"aL" = (/obj/item/twohanded/required/kirbyplants/random,/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plasteel/white/corner{dir = 1},/area/shuttle/escape)
+"aM" = (/obj/effect/turf_decal/delivery,/obj/machinery/light{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aN" = (/obj/structure/chair{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aO" = (/obj/structure/window/reinforced{dir = 8},/turf/open/floor/grass,/area/shuttle/escape)
+"aP" = (/turf/open/floor/grass,/area/shuttle/escape)
+"aQ" = (/obj/structure/flora/ausbushes/sparsegrass,/turf/open/floor/grass,/area/shuttle/escape)
+"aR" = (/obj/structure/window/reinforced{dir = 4},/turf/open/floor/grass,/area/shuttle/escape)
+"aS" = (/obj/machinery/door/firedoor,/obj/machinery/door/airlock/public/glass{name = "Chapel"},/turf/open/floor/carpet,/area/shuttle/escape)
+"aT" = (/obj/effect/turf_decal/delivery,/obj/machinery/camera{c_tag = "Aft Port Solar Access"; dir = 4},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aU" = (/obj/structure/window/reinforced{dir = 8},/obj/structure/flora/ausbushes/leafybush,/turf/open/floor/grass,/area/shuttle/escape)
+"aV" = (/mob/living/simple_animal/cow,/turf/open/floor/grass,/area/shuttle/escape)
+"aW" = (/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/obj/machinery/door/airlock/external{name = "Escape Airlock"},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aX" = (/obj/structure/fans/tiny,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/obj/machinery/door/airlock/external{name = "Escape Airlock"},/turf/open/floor/plasteel,/area/shuttle/escape)
+"aY" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/flora/ausbushes/sparsegrass,/turf/open/floor/grass,/area/shuttle/escape)
+"aZ" = (/obj/machinery/firealarm{dir = 4; pixel_x = 26},/turf/open/floor/plasteel,/area/shuttle/escape)
+"ba" = (/obj/structure/window/reinforced,/obj/structure/window/reinforced{dir = 8},/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/grass,/area/shuttle/escape)
+"bb" = (/obj/machinery/door/window,/obj/structure/flora/ausbushes,/turf/open/floor/grass,/area/shuttle/escape)
+"bc" = (/obj/structure/window/reinforced,/turf/open/floor/grass,/area/shuttle/escape)
+"bd" = (/obj/structure/window/reinforced{dir = 4},/obj/structure/window/reinforced,/obj/item/twohanded/required/kirbyplants/random,/turf/open/floor/grass,/area/shuttle/escape)
+"be" = (/obj/machinery/door/firedoor,/obj/effect/turf_decal/stripes/line{dir = 4},/obj/effect/turf_decal/stripes/line{dir = 8},/obj/machinery/door/airlock/public/glass{name = "Departure Lounge"},/turf/open/floor/plasteel,/area/shuttle/escape)
+"bf" = (/obj/machinery/door/airlock/external{name = "Cargo Escape Airlock"},/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 4},/turf/open/floor/plasteel,/area/shuttle/escape)
+"bg" = (/obj/machinery/light/small,/obj/effect/turf_decal/delivery,/turf/open/floor/plasteel,/area/shuttle/escape)
+"bh" = (/obj/machinery/door/airlock/external{name = "Cargo Escape Airlock"},/obj/structure/fans/tiny,/obj/effect/mapping_helpers/airlock/cyclelink_helper{dir = 8},/turf/open/floor/plasteel,/area/shuttle/escape)
+"bi" = (/obj/effect/turf_decal/stripes/line{dir = 8},/obj/effect/turf_decal/stripes/line,/obj/machinery/camera{c_tag = "Dormitory Toilets"; dir = 1},/turf/open/floor/plasteel,/area/shuttle/escape)
+"bj" = (/obj/effect/turf_decal/stripes/line,/turf/open/floor/plasteel,/area/shuttle/escape)
+"bk" = (/obj/machinery/newscaster{pixel_y = -32},/obj/machinery/light,/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plasteel/white/corner,/area/shuttle/escape)
+"bl" = (/obj/structure/extinguisher_cabinet{pixel_x = 5; pixel_y = -32},/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plasteel/white/corner,/area/shuttle/escape)
+"bm" = (/obj/structure/closet/emcloset,/turf/open/floor/plasteel/dark,/area/shuttle/escape)
+"bn" = (/obj/structure/closet/firecloset,/turf/open/floor/plasteel/dark,/area/shuttle/escape)
+"bo" = (/obj/machinery/airalarm{dir = 1; pixel_y = -22},/obj/item/twohanded/required/kirbyplants/random,/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plasteel/white/corner,/area/shuttle/escape)
+"bp" = (/obj/effect/turf_decal/tile/red{dir = 8},/turf/open/floor/plasteel/cafeteria,/area/shuttle/escape)
+"bq" = (/turf/closed/wall/r_wall,/area/shuttle/escape)
+"br" = (/obj/structure/cable,/obj/machinery/door/airlock/maintenance{req_access_txt = "12"},/obj/structure/disposalpipe/segment,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 1},/turf/open/floor/plating,/area/shuttle/escape)
+
+(1,1,1) = {"
+aaaaabababacadadadadadadadadad
+aaababacacacadadaeafagahaiaiad
+acacacacajakalamanaoapapapaqad
+aCasajatajauapamavawawawawaxad
+ayacacacajauazadamaAaBamamamad
+arajajaDajauapapapapapapapaEad
+acacacacaFauapapapapapapapaGad
+aaabaaacajauapaHaIaJaKapapaLad
+aaababacaMauaNaOaPaQaRapapapaS
+aaabaaacaTauaNaOaPaPaRapapapaS
+acacacacajauaNaUaVaPaRapapapad
+aWajajaXajauaNaOaPaPaYapapaZad
+ayacacacaFauapbabbbcbdapapapbe
+bfbgajbhajauapapapapapapapapbe
+acacacacajbibjbjbjbjapapbkblbe
+aaaaaaadadadadadbmbnbobpbqbqbq
+aaaaaaaaaaaaaaadadadadbrbqaaaa
+"}
