@@ -8,7 +8,7 @@
 /datum/map_template/shuttle/emergency/mirrored
 	suffix = "mirrored"
 	name = "Emergency \"Escape\" Shuttle"
-	credit_cost = 500
+	credit_cost = 7500
 	description = "An erroneous entry - This is just the normal escape shuttle."
 	admin_notes = "Nothing special, just an \"escape\" shuttle."
 
