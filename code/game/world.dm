@@ -292,7 +292,7 @@ GLOBAL_VAR_INIT(tgs_initialized, FALSE)
 		s += "<br>Mode: <b>STARTING</b>"
 	if (hostedby)
 		s += "<br>Hosted by <b>[hostedby]</b>."
-	s += "<img src=\"https://i.imgur.com/xfWVypg.png\">" //Banner image
+	//s += "<img src=\"https://i.imgur.com/xfWVypg.png\">" Banner image
 
 	var/players = GLOB.clients.len
 
